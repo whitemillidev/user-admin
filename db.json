@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Emily",
+      "lastName": "Johnson",
+      "age": 29,
+      "gender": "female",
+      "email": "emily.johnson@x.dummyjson.com",
+      "username": "emilys",
+      "password": "emilyspass"
+    }
+  ]
+}
