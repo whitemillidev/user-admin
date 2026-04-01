@@ -1,0 +1,28 @@
+.users-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.users-list-container-hidden {
+  display: none;
+}
+
+.users-list-title {
+  text-align: center;
+}
+
+.users-list {
+  margin: auto;
+  max-width: 1600px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.users-list-item {
+  width: 300px;
+  padding: 10px;
+  border: solid 1px rgb(63, 63, 63);
+  border-radius: 10px;
+}
