@@ -1,18 +1,16 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstName": "Emily",
+      "firstName": "Emilys",
       "lastName": "Johnson",
-      "age": 29,
+      "age": "29",
       "gender": "female",
-      "email": "emily.johnson@x.dummyjson.com",
       "username": "emilys",
-      "password": "emilyspass"
+      "email": "emily.johnson@x.dummyjson.com",
+      "id": "1"
     },
-
     {
-      "id": 2,
+      "id": "2",
       "firstName": "Michael",
       "lastName": "Smith",
       "age": 35,
@@ -21,9 +19,8 @@
       "username": "michaels",
       "password": "michaelspass"
     },
-
     {
-      "id": 3,
+      "id": "3",
       "firstName": "Sophia",
       "lastName": "Davis",
       "age": 27,
@@ -32,9 +29,8 @@
       "username": "sophias",
       "password": "sophiaspass"
     },
-
     {
-      "id": 4,
+      "id": "4",
       "firstName": "James",
       "lastName": "Wilson",
       "age": 32,
@@ -43,9 +39,8 @@
       "username": "jamesw",
       "password": "jameswpass"
     },
-
     {
-      "id": 5,
+      "id": "5",
       "firstName": "Olivia",
       "lastName": "Brown",
       "age": 30,
@@ -55,27 +50,27 @@
       "password": "oliviaspass"
     },
     {
-      "id": 6,
-      "firstName": "William",
-      "lastName": "Taylor",
-      "age": 28,
+      "id": "6",
+      "firstName": "Liam",
+      "lastName": "Miller",
+      "age": 25,
       "gender": "male",
-      "email": "william.taylor@x.dummyjson.com",
-      "username": "williamt",
-      "password": "williamtpass"
+      "email": "liam.miller@x.dummyjson.com",
+      "username": "liamt",
+      "password": "liamtpass"
     },
     {
-      "id": 7,
+      "id": "7",
       "firstName": "Ava",
-      "lastName": "Anderson",
-      "age": 26,
+      "lastName": "Garcia",
+      "age": 28,
       "gender": "female",
-      "email": "ava.anderson@x.dummyjson.com",
+      "email": "ava.garcia@x.dummyjson.com",
       "username": "avas",
       "password": "avaspass"
     },
     {
-      "id": 8,
+      "id": "8",
       "firstName": "Ethan",
       "lastName": "Thomas",
       "age": 31,
@@ -83,16 +78,7 @@
       "email": "ethan.thomas@x.dummyjson.com",
       "username": "ethant",
       "password": "ethantpass"
-    },
-    {
-      "id": 9,
-      "firstName": "Isabella",
-      "lastName": "Jackson",
-      "age": 29,
-      "gender": "female",
-      "email": "isabella.jackson@x.dummyjson.com",
-      "username": "isabellaj",
-      "password": "isabellajpass"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
