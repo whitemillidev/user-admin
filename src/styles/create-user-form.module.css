@@ -61,7 +61,8 @@
 .create-users-form-input-age,
 .create-users-form-input-gender,
 .create-users-form-input-username,
-.create-users-form-input-email {
+.create-users-form-input-email,
+.create-users-form-input-password {
   width: 465px;
   font-size: 16px;
   padding: 10px 10px 10px 35px;
