@@ -5,12 +5,15 @@
       "lastName": "Johnson",
       "age": "29",
       "gender": "female",
-      "username": "emilys",
       "email": "emily.johnson@x.dummyjson.com",
-      "id": "1"
+      "username": "emilys",
+      "password": "emilys123",
+      "id": "1",
+      "roleId": "1"
     },
     {
       "id": "2",
+      "roleId": "2",
       "firstName": "Michael",
       "lastName": "Smith",
       "age": 35,
@@ -21,6 +24,7 @@
     },
     {
       "id": "3",
+      "roleId": "2",
       "firstName": "Sophia",
       "lastName": "Davis",
       "age": 27,
@@ -37,7 +41,8 @@
       "gender": "male",
       "email": "james.wilson@x.dummyjson.com",
       "username": "jamesw",
-      "password": "jameswpass"
+      "password": "jameswpass",
+      "roleId": "1"
     },
     {
       "id": "5",
@@ -47,7 +52,8 @@
       "gender": "female",
       "email": "olivia.brown@x.dummyjson.com",
       "username": "olivias",
-      "password": "oliviaspass"
+      "password": "oliviaspass",
+      "roleId": "3"
     },
     {
       "id": "6",
@@ -57,7 +63,8 @@
       "gender": "male",
       "email": "liam.miller@x.dummyjson.com",
       "username": "liamt",
-      "password": "liamtpass"
+      "password": "liamtpass",
+      "roleId": "2"
     },
     {
       "id": "7",
@@ -67,7 +74,8 @@
       "gender": "female",
       "email": "ava.garcia@x.dummyjson.com",
       "username": "avas",
-      "password": "avaspass"
+      "password": "avaspass",
+      "roleId": "2"
     },
     {
       "id": "8",
@@ -77,7 +85,100 @@
       "gender": "male",
       "email": "ethan.thomas@x.dummyjson.com",
       "username": "ethant",
-      "password": "ethantpass"
+      "password": "ethantpass",
+      "roleId": "3"
+    },
+    {
+      "id": "9",
+      "firstName": "Isabella",
+      "lastName": "Martinez",
+      "age": 26,
+      "gender": "female",
+      "email": "isabella.martinez@x.dummyjson.com",
+      "username": "isabellas",
+      "password": "isabellaspass",
+      "roleId": "2"
+    },
+    {
+      "id": "10",
+      "firstName": "Noah",
+      "lastName": "Anderson",
+      "age": 29,
+      "gender": "male",
+      "email": "noah.anderson@x.dummyjson.com",
+      "username": "noahs",
+      "password": "noahspass",
+      "roleId": "2"
+    },
+    {
+      "id": "11",
+      "firstName": "Mia",
+      "lastName": "Taylor",
+      "age": 27,
+      "gender": "female",
+      "email": "mia.taylor@x.dummyjson.com",
+      "username": "mias",
+      "password": "miaspass",
+      "roleId": "2"
+    },
+    {
+      "id": "12",
+      "firstName": "William",
+      "lastName": "Harris",
+      "age": 33,
+      "gender": "male",
+      "email": "william.harris@x.dummyjson.com",
+      "username": "williams",
+      "password": "williamspass",
+      "roleId": "2"
+    },
+    {
+      "id": "13",
+      "firstName": "Emily",
+      "lastName": "Clark",
+      "age": 28,
+      "gender": "female",
+      "email": "emily.clark@x.dummyjson.com",
+      "username": "emilys",
+      "password": "emilys123",
+      "roleId": "2"
+    },
+    {
+      "id": "14",
+      "firstName": "James",
+      "lastName": "Lewis",
+      "age": 32,
+      "gender": "male",
+      "email": "james.lewis@x.dummyjson.com",
+      "username": "jamesl",
+      "password": "jameslpass",
+      "roleId": "2"
+    },
+    {
+      "id": "15",
+      "firstName": "Olivia",
+      "lastName": "Walker",
+      "age": 30,
+      "gender": "female",
+      "email": "olivia.walker@x.dummyjson.com",
+      "username": "olivias",
+      "password": "oliviaspass",
+      "roleId": "3"
+    }
+  ],
+
+  "roles": [
+    {
+      "id": "1",
+      "name": "Admin"
+    },
+    {
+      "id": "2",
+      "name": "User"
+    },
+    {
+      "id": "3",
+      "name": "Guest"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
