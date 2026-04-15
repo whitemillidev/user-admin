@@ -4,6 +4,8 @@ import UsersList from "./components/UsersList";
 import styles from "./styles/create-user-form.module.css";
 import useToggle from "./hooks/useToggle";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { createPortal } from "react-dom";
+import UsersTable from "./components/UsersTable";
 
 const queryClient = new QueryClient();
 
@@ -13,14 +15,16 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className={styles["app"]}>
-        <button onClick={toggle}>{value ? "Show Create User Form" : "Show Users List"}</button>
+        <button onClick={toggle}>{value ? "Show Users Table" : "Show Create User Form"}</button>
 
-        {/* {value ? <UsersList /> : <CreateUsersForm />} */}
-        <UsersList />
+        {value ? <CreateUsersForm /> : <UsersTable />}
+
+        {/* <UsersList /> */}
+        {/* <UsersTable />
         <br />
         <hr />
         <br />
-        <CreateUsersForm />
+        {createPortal(<CreateUsersForm />, document.body)} */}
       </div>
     </QueryClientProvider>
   );
