@@ -17,8 +17,6 @@ export default function CreateUsersForm() {
           e.preventDefault();
           addUser(Object.fromEntries(new FormData(e.target)));
           e.target.reset();
-
-          
         }}
         className={styles["create-users-form"]}
       >
