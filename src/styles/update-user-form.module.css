@@ -1,33 +1,78 @@
-.create-users-form-container {
+.update-users-form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(20, 20, 30, 0.861);
+  z-index: 20;
 }
 
-.create-users-form-title {
+.update-users-form-title {
   font-size: 40px;
   text-align: center;
 }
 
-.create-users-form-input-container {
+.update-users-form-input-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.create-users-form-input-label {
+.update-users-form-input-label {
   color: rgb(203, 202, 202);
 }
 
-.create-users-form-input-wrapper {
+.update-users-form-input-wrapper {
   position: relative;
 }
 
-.create-users-form-select-wrapper {
+.update-users-form-select-wrapper {
   position: relative;
 }
 
 .user-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: rgb(203, 202, 202);
+}
+
+.update-users-form {
+  width: 700px;
+  padding: 20px;
+  border: solid 1px rgb(63, 63, 63);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.update-users-form-input-fullname {
+  display: flex;
+  gap: 1rem;
+}
+
+.update-users-form-input-firstname,
+.update-users-form-input-lastname {
+  width: 200px;
+  font-size: 16px;
+  padding: 10px 10px 10px 35px;
+  border: solid 1px rgb(63, 63, 63);
+  border-radius: 5px;
+  background-color: rgb(20, 20, 30);
+}
+
+.update-users-form-select-label {
+  color: rgb(203, 202, 202);
+}
+
+.user-update-icon-select {
   position: absolute;
   left: 10px;
   top: 50%;
@@ -59,46 +104,7 @@
   }
 }
 
-.create-users-form {
-  width: 700px;
-  padding: 20px;
-  border: solid 1px rgb(63, 63, 63);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-.create-users-form-input-fullname {
-  display: flex;
-  gap: 1rem;
-}
-
-.create-users-form-input-firstname,
-.create-users-form-input-lastname {
-  width: 200px;
-  font-size: 16px;
-  padding: 10px 10px 10px 35px;
-  border: solid 1px rgb(63, 63, 63);
-  border-radius: 5px;
-  background-color: rgb(20, 20, 30);
-}
-
-.create-users-form-select-label {
-  color: rgb(203, 202, 202);
-}
-
-.user-create-icon-select {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  color: rgb(203, 202, 202);
-}
-
-.create-users-form-select-role {
+.update-users-form-select-role {
   appearance: none;
   width: 510px;
   font-size: 16px;
@@ -106,9 +112,10 @@
   border: solid 1px rgb(63, 63, 63);
   border-radius: 5px;
   background-color: rgb(20, 20, 30);
+  cursor: pointer;
 }
 
-.create-users-form-close-btn {
+.update-users-form-close-btn {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -123,18 +130,17 @@
   }
 }
 
-.create-users-form-select-container {
+.update-users-form-select-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.create-users-form-input-age,
-.create-users-form-input-gender,
-.create-users-form-input-username,
-.create-users-form-input-email,
-.create-users-form-input-role,
-.create-users-form-input-password {
+.update-users-form-input-age,
+.update-users-form-input-gender,
+.update-users-form-input-username,
+.update-users-form-input-email,
+.update-users-form-input-role {
   width: 465px;
   font-size: 16px;
   padding: 10px 10px 10px 35px;
@@ -143,7 +149,16 @@
   background-color: rgb(20, 20, 30);
 }
 
-.create-users-form-button {
+.update-users-form-input-password {
+  width: 465px;
+  font-size: 16px;
+  padding: 10px 15px 10px 35px;
+  border: solid 1px rgb(63, 63, 63);
+  border-radius: 5px;
+  background-color: rgb(20, 20, 30);
+}
+
+.update-users-form-button {
   padding: 0.5rem 1rem;
   border: solid 1px rgb(63, 63, 63);
   border-radius: 5px;
