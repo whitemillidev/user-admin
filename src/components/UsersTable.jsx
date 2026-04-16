@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/users-table.module.css";
 import useUsers from "../hooks/useUsers";
 import useRemoveUser from "../hooks/useRemoveUser";
@@ -7,11 +7,19 @@ import GarbageIcon from "../icons/GarbageIcon";
 import useUpdateUser from "../hooks/useUpdateUser";
 import UserFIeldRow from "./UserFieldRow";
 import EditIcon from "../icons/EditIcon";
+import { setSelectedUser, useUsersStore } from "../store/users";
+import useRoles from "../hooks/useRoles";
 
 export default function UsersTable() {
   const { data = [], isLoading, error } = useUsers();
+  const { data: roles = [] } = useRoles();
+
   const { mutate: removeUser } = useRemoveUser();
   const { mutate: updateUser } = useUpdateUser();
+  const selectedUser = useUsersStore((state) => state.selectedUser);
+  console.log(selectedUser);
+
+  console.log(data);
 
   return (
     <div className={styles["users-table-container"]}>
@@ -26,6 +34,7 @@ export default function UsersTable() {
             <th>Gender</th>
             <th>Username</th>
             <th>Email</th>
+            <th>Role</th>
             <th>Password</th>
             <th>Age</th>
             <th>Edit</th>
@@ -41,11 +50,12 @@ export default function UsersTable() {
               <td>{user.gender}</td>
               <td>{user.username}</td>
               <td>{user.email}</td>
+              <td>{roles.find((role) => role.id === user.roleId)?.name }</td>
               <td>{user.password}</td>
               <td>{user.age}</td>
 
               <td>
-                <button className={styles["users-table-item-edit"]} >
+                <button className={styles["users-table-item-edit"]} onClick={() => setSelectedUser(user)}>
                   <EditIcon />
                 </button>
               </td>
