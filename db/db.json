@@ -23,26 +23,26 @@
       "password": "michaelspass"
     },
     {
-      "id": "3",
-      "roleId": "2",
       "firstName": "Sophia",
       "lastName": "Davis",
-      "age": 27,
+      "age": "27",
       "gender": "female",
       "email": "sophia.davis@x.dummyjson.com",
+      "roleId": "2",
       "username": "sophias",
-      "password": "sophiaspass"
+      "password": "sophiaspass",
+      "id": "3"
     },
     {
-      "id": "4",
       "firstName": "James",
       "lastName": "Wilson",
-      "age": 32,
+      "age": "32",
       "gender": "male",
       "email": "james.wilson@x.dummyjson.com",
+      "roleId": "2",
       "username": "jamesw",
       "password": "jameswpass",
-      "roleId": "1"
+      "id": "4"
     },
     {
       "id": "5",
@@ -111,62 +111,17 @@
       "roleId": "2"
     },
     {
-      "id": "11",
-      "firstName": "Mia",
-      "lastName": "Taylor",
-      "age": 27,
-      "gender": "female",
-      "email": "mia.taylor@x.dummyjson.com",
-      "username": "mias",
-      "password": "miaspass",
-      "roleId": "2"
-    },
-    {
-      "id": "12",
-      "firstName": "William",
-      "lastName": "Harris",
-      "age": 33,
+      "firstName": "Ramil'",
+      "lastName": "Museibov",
+      "age": "29",
       "gender": "male",
-      "email": "william.harris@x.dummyjson.com",
-      "username": "williams",
-      "password": "williamspass",
-      "roleId": "2"
-    },
-    {
-      "id": "13",
-      "firstName": "Emily",
-      "lastName": "Clark",
-      "age": 28,
-      "gender": "female",
-      "email": "emily.clark@x.dummyjson.com",
-      "username": "emilys",
-      "password": "emilys123",
-      "roleId": "2"
-    },
-    {
-      "id": "14",
-      "firstName": "James",
-      "lastName": "Lewis",
-      "age": 32,
-      "gender": "male",
-      "email": "james.lewis@x.dummyjson.com",
-      "username": "jamesl",
-      "password": "jameslpass",
-      "roleId": "2"
-    },
-    {
-      "id": "15",
-      "firstName": "Olivia",
-      "lastName": "Walker",
-      "age": 30,
-      "gender": "female",
-      "email": "olivia.walker@x.dummyjson.com",
-      "username": "olivias",
-      "password": "oliviaspass",
-      "roleId": "3"
+      "email": "ramilmys@gmail.com",
+      "roleId": "2",
+      "username": "Leroro1",
+      "password": "1234",
+      "id": "ibrj7EMTdLE"
     }
   ],
-
   "roles": [
     {
       "id": "1",
@@ -178,7 +133,7 @@
     },
     {
       "id": "3",
-      "name": "Guest"
+      "name": "Moderator"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
