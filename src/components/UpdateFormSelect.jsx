@@ -5,8 +5,6 @@ import useRoles from "../hooks/useRoles";
 export default function UpdateFormSelect({ className, name, label, Icon, defaultValue, ...props }) {
   const { data: roles = [] } = useRoles();
 
-  console.log("Roles:", roles);
-
   return (
     <div className={styles["update-users-form-select-container"]}>
       <p htmlFor={name} className={styles["update-users-form-select-label"]}>
