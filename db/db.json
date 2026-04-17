@@ -1,7 +1,8 @@
 {
   "users": [
     {
-      "firstName": "Emilys",
+      "fullName": "Emily Johnson",
+      "firstName": "Emily",
       "lastName": "Johnson",
       "age": "29",
       "gender": "female",
@@ -12,17 +13,19 @@
       "roleId": "1"
     },
     {
-      "id": "2",
-      "roleId": "2",
+      "fullName": "Michael Smith",
       "firstName": "Michael",
       "lastName": "Smith",
-      "age": 35,
+      "age": "33",
       "gender": "male",
       "email": "michael.smith@x.dummyjson.com",
+      "roleId": "2",
       "username": "michaels",
-      "password": "michaelspass"
+      "password": "michaelspass",
+      "id": "2"
     },
     {
+      "fullName": "Sophia Davis",
       "firstName": "Sophia",
       "lastName": "Davis",
       "age": "27",
@@ -34,6 +37,7 @@
       "id": "3"
     },
     {
+      "fullName": "James Wilson",
       "firstName": "James",
       "lastName": "Wilson",
       "age": "32",
@@ -46,6 +50,7 @@
     },
     {
       "id": "5",
+      "fullName": "Olivia Brown",
       "firstName": "Olivia",
       "lastName": "Brown",
       "age": 30,
@@ -57,6 +62,7 @@
     },
     {
       "id": "6",
+      "fullName": "Liam Miller",
       "firstName": "Liam",
       "lastName": "Miller",
       "age": 25,
@@ -68,6 +74,7 @@
     },
     {
       "id": "7",
+      "fullName": "Ava Garcia",
       "firstName": "Ava",
       "lastName": "Garcia",
       "age": 28,
@@ -79,6 +86,7 @@
     },
     {
       "id": "8",
+      "fullName": "Ethan Thomas",
       "firstName": "Ethan",
       "lastName": "Thomas",
       "age": 31,
@@ -90,6 +98,7 @@
     },
     {
       "id": "9",
+      "fullName": "Isabella Martinez",
       "firstName": "Isabella",
       "lastName": "Martinez",
       "age": 26,
@@ -101,6 +110,7 @@
     },
     {
       "id": "10",
+      "fullName": "Noah Anderson",
       "firstName": "Noah",
       "lastName": "Anderson",
       "age": 29,
@@ -111,6 +121,7 @@
       "roleId": "2"
     },
     {
+      "fullName": "Ramil Museibov",
       "firstName": "Ramil'",
       "lastName": "Museibov",
       "age": "29",
@@ -120,6 +131,54 @@
       "username": "Leroro1",
       "password": "1234",
       "id": "ibrj7EMTdLE"
+    },
+    {
+      "fullName": "Alex Pushkarev",
+      "firstName": "Alex",
+      "lastName": "Pushkarev",
+      "age": "29",
+      "gender": "male",
+      "email": "alexpushka@gmail.com",
+      "roleId": "1",
+      "username": "petya_ogurkin",
+      "password": "oGurkin_802347$",
+      "id": "njkw745oui2ng"
+    },
+    {
+      "fullName": "Jamal Murray",
+      "firstName": "Jamal",
+      "lastName": "Murray",
+      "age": "29",
+      "gender": "male",
+      "email": "jamalmurr@gmail.com",
+      "roleId": "2",
+      "username": "jamurr",
+      "password": "8765345",
+      "id": "ibrj7EMTdsgdLE"
+    },
+    {
+      "fullName": "Nikitka Pavlov",
+      "firstName": "Nikitka",
+      "lastName": "Pavlov",
+      "age": "24",
+      "gender": "male",
+      "email": "nikitkadev@gmail.com",
+      "roleId": "3",
+      "username": "nikkko_dev",
+      "password": "nik_pavlov7968423",
+      "id": "NtFkuMfKKjU"
+    },
+    {
+      "fullName": "Ramil' Museibov",
+      "firstName": "Ramil'",
+      "lastName": "Museibov",
+      "age": "23",
+      "gender": "male",
+      "email": "ramilmys@gmail.com",
+      "roleId": "1",
+      "username": "RMuseibov-KI21",
+      "password": "123",
+      "id": "TXeFaMUEXU8"
     }
   ],
   "roles": [
