@@ -6,16 +6,18 @@ import GenderIcon from "../icons/GenderIcon";
 import MailIcon from "../icons/MailIcon";
 import PasswIcon from "../icons/PasswIcon";
 import useAddUser from "../hooks/useAddUser";
-import { setIsWatched, useUsersStore } from "../store/users";
+import { setFirstName, setIsWatched, setLastName, useUsersStore } from "../store/users";
 import CreateFormSelect from "./CreateFormSelect";
 import RightsIcon from "../icons/RightsIcon";
 import CreateFormField from "./CreateFormField";
 import EyeIcon from "../icons/EyeIcon";
 import IncognitoIcon from "../icons/IncognitoIcon";
+import { useShallow } from "zustand/shallow";
 
 export default function CreateUsersForm() {
-  const selectedUser = useUsersStore((state) => state.selectedUser);
-  const isWatched = useUsersStore((state) => state.isWatched);
+  const [selectedUser, isWatched, firstName, lastName] = useUsersStore(
+    useShallow((state) => [state.selectedUser, state.isWatched, state.firstName, state.lastName]),
+  );
 
   const { mutate: addUser } = useAddUser();
   return (
@@ -27,14 +29,40 @@ export default function CreateUsersForm() {
           e.target.reset();
 
           setIsWatched(false);
+          setFirstName("");
+          setLastName("");
         }}
         className={styles["create-users-form"]}
       >
         <h2 className={styles["create-users-form-title"]}>Create Users Form</h2>
 
-        <div className={styles["create-users-form-input-fullname"]}>
-          <CreateFormField name="firstName" label="First Name" Icon={UserIcon} type="text" placeholder="Ivan" />
-          <CreateFormField name="lastName" label="Last Name" Icon={UserIcon} type="text" placeholder="Harris" />
+        <CreateFormField
+          name="fullName"
+          value={`${firstName} ${lastName}`}
+          label="Full Name"
+          Icon={UserIcon}
+          type="email"
+          placeholder="Ivan Harris"
+          readOnly
+        />
+
+        <div className={styles["create-users-form-input-fullname-container"]}>
+          <CreateFormField
+            name="firstName"
+            onChange={(e) => setFirstName(e.target.value)}
+            label="First Name"
+            Icon={UserIcon}
+            type="text"
+            placeholder="Ivan"
+          />
+          <CreateFormField
+            name="lastName"
+            onChange={(e) => setLastName(e.target.value)}
+            label="Last Name"
+            Icon={UserIcon}
+            type="text"
+            placeholder="Harris"
+          />
         </div>
 
         <CreateFormField name="age" label="Age" Icon={CalendarIcon} type="number" placeholder="20" />
