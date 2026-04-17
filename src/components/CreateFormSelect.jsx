@@ -5,8 +5,6 @@ import useRoles from "../hooks/useRoles";
 export default function CreateFormSelect({ className, name, label, Icon, defaultValue, ...props }) {
   const { data: roles = [] } = useRoles();
 
-  console.log("Roles:", roles);
-
   return (
     <div className={styles["create-users-form-select-container"]}>
       <p htmlFor={name} className={styles["create-users-form-select-label"]}>
