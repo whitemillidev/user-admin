@@ -70,7 +70,7 @@
   gap: 2rem;
 }
 
-.create-users-form-input-fullname {
+.create-users-form-input-fullname-container {
   display: flex;
   gap: 1rem;
 }
@@ -127,6 +127,16 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.create-users-form-input-fullname {
+  width: 465px;
+  font-size: 16px;
+  padding: 10px 10px 10px 35px;
+  border: solid 1px rgb(63, 63, 63);
+  border-radius: 5px;
+  background-color: rgb(20, 20, 30);
+  pointer-events: none;
 }
 
 .create-users-form-input-age,
