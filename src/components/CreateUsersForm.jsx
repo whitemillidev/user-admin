@@ -25,7 +25,12 @@ export default function CreateUsersForm() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          addUser(Object.fromEntries(new FormData(e.target)));
+
+          const userData = {
+            ...Object.fromEntries(new FormData(e.target)),
+            fullName: `${firstName} ${lastName}`,
+          };
+          addUser(userData);
           e.target.reset();
 
           setIsWatched(false);
@@ -35,16 +40,6 @@ export default function CreateUsersForm() {
         className={styles["create-users-form"]}
       >
         <h2 className={styles["create-users-form-title"]}>Create Users Form</h2>
-
-        <CreateFormField
-          name="fullName"
-          value={`${firstName} ${lastName}`}
-          label="Full Name"
-          Icon={UserIcon}
-          type="email"
-          placeholder="Ivan Harris"
-          readOnly
-        />
 
         <div className={styles["create-users-form-input-fullname-container"]}>
           <CreateFormField
