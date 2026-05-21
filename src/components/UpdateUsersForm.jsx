@@ -50,15 +50,6 @@ export default function UpdateUsersForm() {
           <CloseIcon />
         </button>
         <h2 className={styles["update-users-form-title"]}>Update Users Form</h2>
-        <UpdateFormField
-          name="fullName"
-          label="Full Name"
-          Icon={UserIcon}
-          type="text"
-          placeholder="Ivan Harris"
-          readOnly
-          value={`${firstName ? firstName : selectedUser.firstName} ${lastName ? lastName : selectedUser.lastName}`}
-        />
 
         <div className={styles["update-users-form-input-fullname-container"]}>
           <UpdateFormField
