@@ -1,4 +1,5 @@
 .create-users-form-container {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,7 +145,8 @@
 .create-users-form-input-username,
 .create-users-form-input-email,
 .create-users-form-input-role,
-.create-users-form-input-password {
+.create-users-form-input-password,
+.create-users-form-input-rolename {
   width: 465px;
   font-size: 16px;
   padding: 10px 10px 10px 35px;
@@ -164,4 +166,68 @@
   &:hover {
     background-color: rgb(24, 25, 40);
   }
+}
+
+/* ACCESSES */
+
+.create-users-form-accesses-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.create-users-form-accesses-label {
+  color: rgb(203, 202, 202);
+}
+
+.create-users-form-accesses-wrapper {
+  position: relative;
+}
+
+.create-users-form-accesses-item-icon {
+  width: 18px;
+  height: 18px;
+  color: rgb(203, 202, 202);
+}
+
+.user-create-icon-accesses {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: rgb(203, 202, 202);
+}
+
+.create-users-form-accesses-list {
+  width: 510px; /* как select */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.create-users-form-accesses-item {
+  flex: 1 1 calc(40% - 0.5rem); /* 2 в ряд */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 10px;
+  border: 1px solid rgb(63, 63, 63);
+  border-radius: 5px;
+  background-color: rgb(20, 20, 30);
+
+  cursor: pointer;
+  color: rgb(203, 202, 202);
+  transition: 0.2s;
+}
+
+.create-users-form-accesses-item:hover {
+  background-color: rgb(30, 30, 45);
+}
+
+.create-users-form-accesses-checkbox {
+  cursor: pointer;
+}
+
+.create-users-form-accesses-text {
+  font-size: 14px;
 }
