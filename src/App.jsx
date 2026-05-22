@@ -8,20 +8,16 @@ import UsersTable from "./components/UsersTable";
 import UpdateUsersForm from "./components/UpdateUsersForm";
 import { useUsersStore } from "./store/users";
 
-const queryClient = new QueryClient();
-
 export default function App() {
   const { value, toggle } = useToggle(false);
   const selectedUser = useUsersStore((state) => state.selectedUser);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <div>
-        <button onClick={toggle}>{value ? "Show Users Table" : "Show Create User Form"}</button>
-        {value ? <CreateUsersForm /> : <UsersTable />}
-        {selectedUser && <div className="overlay" />}
-        {selectedUser && <UpdateUsersForm />}
-      </div>
-    </QueryClientProvider>
+    <div>
+      <button onClick={toggle}>{value ? "Show Users Table" : "Show Create User Form"}</button>
+      {value ? <CreateUsersForm /> : <UsersTable />}
+      {selectedUser && <div className="overlay" />}
+      {selectedUser && <UpdateUsersForm />}
+    </div>
   );
 }
