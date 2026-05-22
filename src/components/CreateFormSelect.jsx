@@ -15,7 +15,7 @@ export default function CreateFormSelect({ className, name, label, Icon, default
         <select id={name} name={name} className={styles["create-users-form-select-role"]} defaultValue={defaultValue} {...props}>
           {roles.map((role) => (
             <option key={role.id} value={role.id}>
-              {role.name}
+              {role.roleName}
             </option>
           ))}
         </select>

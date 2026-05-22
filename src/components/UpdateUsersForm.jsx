@@ -21,6 +21,8 @@ export default function UpdateUsersForm() {
     useShallow((state) => [state.selectedUser, state.isWatched, state.firstName, state.lastName]),
   );
 
+  console.log(selectedUser.roleId);
+
   return (
     <div className={styles["update-users-form-container"]}>
       <form

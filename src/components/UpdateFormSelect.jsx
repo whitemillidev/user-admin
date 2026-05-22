@@ -15,7 +15,7 @@ export default function UpdateFormSelect({ className, name, label, Icon, default
         <select id={name} name={name} className={styles["update-users-form-select-role"]} defaultValue={defaultValue} {...props}>
           {roles.map((role) => (
             <option key={role.id} value={role.id}>
-              {role.name}
+              {role.roleName}
             </option>
           ))}
         </select>
