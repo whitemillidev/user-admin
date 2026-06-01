@@ -64,3 +64,23 @@ td {
     color: rgb(255, 0, 0);
   }
 }
+
+.users-table-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.add-user-btn {
+  height: 38px;
+  background: transparent;
+  border: solid 1px rgb(63, 63, 63);
+  color: rgb(195, 195, 195);
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: rgb(24, 25, 40);
+    color: white;
+    border-color: white;
+  }
+}
