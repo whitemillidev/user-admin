@@ -4,7 +4,8 @@ export const useUsersStore = create(() => ({
   selectedUser: null,
   roles: [],
   isWatched: false,
-  search: "",
+  searchUsers: "",
+  searchRoles: "",
   firstName: "",
   lastName: "",
 }));
@@ -21,8 +22,12 @@ export function setIsWatched(isWatched) {
   useUsersStore.setState({ isWatched });
 }
 
-export function setSearch(search) {
-  useUsersStore.setState({ search });
+export function setSearchUsers(searchUsers) {
+  useUsersStore.setState({ searchUsers });
+}
+
+export function setSearchRoles(searchRoles) {
+  useUsersStore.setState({ searchRoles });
 }
 
 export function setFirstName(firstName) {
