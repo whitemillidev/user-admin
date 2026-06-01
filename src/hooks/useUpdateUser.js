@@ -4,7 +4,7 @@ export default function useUpdateUser() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: ({ data, id }) =>
-      fetch(`api/users/${id}`, {
+      fetch(`/api/users/${id}`, {
         body: JSON.stringify(data),
         method: "PUT",
       }),

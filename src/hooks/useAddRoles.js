@@ -5,7 +5,7 @@ export default function useAddRoles() {
 
   return useMutation({
     mutationFn: (data) =>
-      fetch(`api/roles`, {
+      fetch(`/api/roles`, {
         body: JSON.stringify(data),
         method: "POST",
       }),

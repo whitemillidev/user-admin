@@ -4,7 +4,7 @@ export default function useRemoveUser() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (id) =>
-      fetch(`api/users/${id}`, {
+      fetch(`/api/users/${id}`, {
         method: "DELETE",
       }),
     onSuccess: () => {
