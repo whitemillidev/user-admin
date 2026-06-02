@@ -13,13 +13,20 @@ import CreateFormField from "./CreateFormField";
 import EyeIcon from "../icons/EyeIcon";
 import IncognitoIcon from "../icons/IncognitoIcon";
 import { useShallow } from "zustand/shallow";
+import useRoles from "../hooks/useRoles";
+import useUsers from "../hooks/useUsers";
+import { useNavigate } from "@tanstack/react-router";
+import CloseIcon from "../icons/CloseIcon";
 
 export default function CreateUsersForm() {
   const [selectedUser, isWatched, firstName, lastName] = useUsersStore(
     useShallow((state) => [state.selectedUser, state.isWatched, state.firstName, state.lastName]),
   );
-
+  const { data: roles = [] } = useRoles();
+  const { data: users = [] } = useUsers();
   const { mutate: addUser } = useAddUser();
+
+  const navigate = useNavigate();
   return (
     <div className={styles["create-users-form-container"]}>
       <form
@@ -39,6 +46,17 @@ export default function CreateUsersForm() {
         }}
         className={styles["create-users-form"]}
       >
+        <button
+          type="button"
+          className={styles["create-users-form-close-btn"]}
+          onClick={() => {
+            navigate({
+              to: "/users-table",
+            });
+          }}
+        >
+          <CloseIcon />
+        </button>
         <h2 className={styles["create-users-form-title"]}>Create Users Form</h2>
 
         <div className={styles["create-users-form-input-fullname-container"]}>
@@ -61,9 +79,25 @@ export default function CreateUsersForm() {
         </div>
 
         <CreateFormField name="age" label="Age" Icon={CalendarIcon} type="number" placeholder="20" />
-        <CreateFormField name="gender" label="Gender" Icon={GenderIcon} type="text" placeholder="Male" />
+        <CreateFormSelect
+          name="gender"
+          label="Gender"
+          Icon={GenderIcon}
+          options={[
+            { value: "male", label: "Male     " },
+            { value: "female", label: "Female   " },
+          ]}
+        />
+        <CreateFormSelect
+          name="roleId"
+          label="Role"
+          Icon={RightsIcon}
+          options={roles.map((role) => ({
+            value: role.id,
+            label: role.roleName,
+          }))}
+        />
         <CreateFormField name="email" label="Email" Icon={MailIcon} type="email" placeholder="qwerty@gmail.com" />
-        <CreateFormSelect name="roleId" label="Role" Icon={RightsIcon} />
         <CreateFormField name="username" label="Username" Icon={UserIcon} type="text" placeholder="nexus_4235" />
         <CreateFormField
           name="password"

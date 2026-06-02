@@ -14,14 +14,16 @@ import UpdateFormField from "./UpdateFormField";
 import EyeIcon from "../icons/EyeIcon";
 import IncognitoIcon from "../icons/IncognitoIcon";
 import { useShallow } from "zustand/shallow";
+import { useNavigate } from "@tanstack/react-router";
+import useRoles from "../hooks/useRoles";
 
 export default function UpdateUsersForm() {
   const { mutate: updateUser } = useUpdateUser();
   const [selectedUser, isWatched, firstName, lastName] = useUsersStore(
     useShallow((state) => [state.selectedUser, state.isWatched, state.firstName, state.lastName]),
   );
-
-  console.log(selectedUser.roleId);
+  const { data: roles = [] } = useRoles();
+  const navigate = useNavigate();
 
   return (
     <div className={styles["update-users-form-container"]}>
@@ -47,6 +49,10 @@ export default function UpdateUsersForm() {
             setIsWatched(false);
             setFirstName("");
             setLastName("");
+
+            navigate({
+              to: "/users-table",
+            });
           }}
         >
           <CloseIcon />
@@ -61,7 +67,7 @@ export default function UpdateUsersForm() {
             Icon={UserIcon}
             type="text"
             placeholder="Ivan"
-            defaultValue={selectedUser.firstName}
+            defaultValue={selectedUser?.firstName}
           />
           <UpdateFormField
             name="lastName"
@@ -70,14 +76,39 @@ export default function UpdateUsersForm() {
             Icon={UserIcon}
             type="text"
             placeholder="Harris"
-            defaultValue={selectedUser.lastName}
+            defaultValue={selectedUser?.lastName}
           />
         </div>
-        <UpdateFormField name="age" label="Age" Icon={CalendarIcon} type="number" placeholder="20" defaultValue={selectedUser.age} />
-        <UpdateFormField name="gender" label="Gender" Icon={GenderIcon} type="text" placeholder="Male" defaultValue={selectedUser.gender} />
-        <UpdateFormField name="email" label="Email" Icon={MailIcon} type="email" placeholder="qwerty@gmail.com" defaultValue={selectedUser.email} />
-        <UpdateFormSelect name="roleId" label="Role" Icon={RightsIcon} defaultValue={selectedUser.roleId} />
-        <UpdateFormField name="username" label="Username" Icon={UserIcon} type="text" placeholder="nexus_4235" defaultValue={selectedUser.username} />
+        <UpdateFormField name="age" label="Age" Icon={CalendarIcon} type="number" placeholder="20" defaultValue={selectedUser?.age} />
+        <UpdateFormSelect
+          name="gender"
+          label="Gender"
+          Icon={GenderIcon}
+          options={[
+            { value: "male", label: "Male     " },
+            { value: "female", label: "Female   " },
+          ]}
+          defaultValue={selectedUser?.gender}
+        />
+        <UpdateFormField name="email" label="Email" Icon={MailIcon} type="email" placeholder="qwerty@gmail.com" defaultValue={selectedUser?.email} />
+        <UpdateFormSelect
+          name="roleId"
+          label="Role"
+          Icon={RightsIcon}
+          options={roles.map((role) => ({
+            value: role.id,
+            label: role.roleName,
+          }))}
+          defaultValue={selectedUser?.roleId}
+        />
+        <UpdateFormField
+          name="username"
+          label="Username"
+          Icon={UserIcon}
+          type="text"
+          placeholder="nexus_4235"
+          defaultValue={selectedUser?.username}
+        />
         <UpdateFormField
           name="password"
           label="Password"
@@ -86,7 +117,7 @@ export default function UpdateUsersForm() {
           onClick={() => setIsWatched(!isWatched)}
           type={isWatched ? "text" : "password"}
           placeholder="••••••••"
-          defaultValue={selectedUser.password}
+          defaultValue={selectedUser?.password}
         />
 
         <button className={styles["update-users-form-button"]} type="submit">
