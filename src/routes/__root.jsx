@@ -27,16 +27,9 @@ function RootLayout() {
         <Link onClick={toggle} className={styles["nav-link"]} to="/users-table">
           Users Table
         </Link>
-        <Link onClick={toggle} className={styles["nav-link"]} to="/create-users">
-          Create users
-        </Link>
 
         <Link onClick={toggle} className={styles["nav-link"]} to="/roles-table">
           Roles Table
-        </Link>
-
-        <Link onClick={toggle} className={styles["nav-link"]} to="/create-roles">
-          Create roles
         </Link>
       </nav>
       <Outlet />
