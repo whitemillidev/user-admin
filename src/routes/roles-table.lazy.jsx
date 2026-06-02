@@ -1,4 +1,4 @@
-import { createLazyFileRoute } from "@tanstack/react-router";
+import { createLazyFileRoute, Outlet } from "@tanstack/react-router";
 import RolesTable from "../components/RolesTable";
 
 export const Route = createLazyFileRoute("/roles-table")({
@@ -6,5 +6,10 @@ export const Route = createLazyFileRoute("/roles-table")({
 });
 
 function RouteComponent() {
-  return <RolesTable />;
+  return (
+    <>
+      <RolesTable />
+      <Outlet />
+    </>
+  );
 }
