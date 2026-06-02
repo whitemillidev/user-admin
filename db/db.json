@@ -121,18 +121,6 @@
       "roleId": "WXFxRAHCX8A"
     },
     {
-      "fullName": "Ramil Museibov",
-      "firstName": "Ramil'",
-      "lastName": "Museibov",
-      "age": "29",
-      "gender": "male",
-      "email": "ramilmys@gmail.com",
-      "roleId": "WXFxRAHCX8A",
-      "username": "Leroro1",
-      "password": "1234",
-      "id": "ibrj7EMTdLE"
-    },
-    {
       "fullName": "Alex Pushkarev",
       "firstName": "Alex",
       "lastName": "Pushkarev",
@@ -169,18 +157,6 @@
       "id": "NtFkuMfKKjU"
     },
     {
-      "fullName": "Ramil' Museibov",
-      "firstName": "Ramil'",
-      "lastName": "Museibov",
-      "age": "23",
-      "gender": "male",
-      "email": "ramilmys@gmail.com",
-      "roleId": "oEllqSvwzMM",
-      "username": "RMuseibov-KI21",
-      "password": "123",
-      "id": "TXeFaMUEXU8"
-    },
-    {
       "fullName": "Stephen Curry",
       "firstName": "Stephen",
       "lastName": "Curry",
@@ -196,17 +172,27 @@
   "roles": [
     {
       "roleName": "Admin",
-      "accesses": ["create", "read", "update", "delete"],
+      "accesses": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
       "id": "oEllqSvwzMM"
     },
     {
       "roleName": "User",
-      "accesses": ["read"],
+      "accesses": [
+        "read"
+      ],
       "id": "WXFxRAHCX8A"
     },
     {
       "roleName": "Moderator",
-      "accesses": ["read", "update"],
+      "accesses": [
+        "read",
+        "update"
+      ],
       "id": "xq7h1XnzVo"
     }
   ],
