@@ -167,6 +167,18 @@
       "username": "stephcurry",
       "password": "1234",
       "id": "LW22TqSrbiw"
+    },
+    {
+      "firstName": "Ramil'",
+      "lastName": "Museibov",
+      "age": "29",
+      "gender": "male",
+      "roleId": "oEllqSvwzMM",
+      "email": "ramilmys@gmail.com",
+      "username": "RMuseibov-KI21",
+      "password": "123",
+      "fullName": "Ramil' Museibov",
+      "id": "ae5HFi1l9SA"
     }
   ],
   "roles": [
