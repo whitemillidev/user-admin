@@ -10,7 +10,7 @@ function AddUsersPage() {
 
   return (
     <>
-      <div className="overlay" onClick={() => navigate({ to: "/users-table" })} />
+      <div className="overlay" />
       <CreateUsersForm />
     </>
   );
