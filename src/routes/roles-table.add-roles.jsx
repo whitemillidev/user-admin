@@ -6,11 +6,10 @@ export const Route = createFileRoute("/roles-table/add-roles")({
 });
 
 function AddRolesPage() {
-  const navigate = useNavigate();
 
   return (
     <>
-      <div className="overlay" onClick={() => navigate({ to: "/roles-table" })} />
+      <div className="overlay" />
       <CreateRolesForm />
     </>
   );
