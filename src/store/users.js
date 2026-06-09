@@ -1,14 +1,57 @@
 import { create } from "zustand";
+import { createJSONStorage, persist } from "zustand/middleware";
 
-export const useUsersStore = create(() => ({
-  selectedUser: null,
-  roles: [],
-  isWatched: false,
-  searchUsers: "",
-  searchRoles: "",
-  firstName: "",
-  lastName: "",
-}));
+export const useUsersStore = create(
+  persist(
+    () => ({
+      selectedUser: null,
+      roles: [],
+      isWatched: false,
+
+      searchUsers: "",
+      searchRoles: "",
+
+      firstName: "",
+      lastName: "",
+      gender: "",
+      age: "",
+      roleId: "",
+      email: "",
+      username: "",
+      password: "",
+    }),
+
+    {
+      name: "users-form",
+      storage: createJSONStorage(() => sessionStorage),
+
+      partialize: (state) => ({
+        firstName: state.firstName,
+        lastName: state.lastName,
+        gender: state.gender,
+        age: state.age,
+        roleId: state.roleId,
+        email: state.email,
+        username: state.username,
+        password: state.password,
+      }),
+    },
+  ),
+);
+
+export function resetCreateUserForm() {
+  useUsersStore.setState({
+    firstName: "",
+    lastName: "",
+    gender: "",
+    age: "",
+    roleId: "",
+    email: "",
+    username: "",
+    password: "",
+    isWatched: false,
+  });
+}
 
 export function setSelectedUser(selectedUser) {
   useUsersStore.setState({ selectedUser });
@@ -36,4 +79,28 @@ export function setFirstName(firstName) {
 
 export function setLastName(lastName) {
   useUsersStore.setState({ lastName });
+}
+
+export function setGender(gender) {
+  useUsersStore.setState({ gender });
+}
+
+export function setAge(age) {
+  useUsersStore.setState({ age });
+}
+
+export function setRoleId(roleId) {
+  useUsersStore.setState({ roleId });
+}
+
+export function setEmail(email) {
+  useUsersStore.setState({ email });
+}
+
+export function setUsername(username) {
+  useUsersStore.setState({ username });
+}
+
+export function setPassword(password) {
+  useUsersStore.setState({ password });
 }
