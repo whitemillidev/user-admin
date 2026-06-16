@@ -1,23 +1,17 @@
 import React from "react";
-import styles from "../styles/update-user-form.module.css";
-import useRoles from "../hooks/useRoles";
+import { Select } from "@mantine/core";
 
-export default function UpdateFormSelect({ className, name, options, label, Icon, defaultValue, ...props }) {
+export default function UpdateFormSelect({ name, options, label, Icon, value, defaultValue, onChange, ...props }) {
   return (
-    <div className={styles["update-users-form-select-container"]}>
-      <p htmlFor={name} className={styles["update-users-form-select-label"]}>
-        {label}
-      </p>
-      <div className={styles["update-users-form-select-wrapper"]}>
-        {Icon && <Icon className={styles["user-update-icon-select"]} />}
-        <select id={name} name={name} className={styles["update-users-form-select-role"]} defaultValue={defaultValue} {...props}>
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-      </div>
-    </div>
+    <Select
+      name={name}
+      label={label}
+      data={options}
+      value={value}
+      defaultValue={defaultValue}
+      onChange={onChange}
+      leftSection={Icon ? <Icon /> : null}
+      {...props}
+    />
   );
 }

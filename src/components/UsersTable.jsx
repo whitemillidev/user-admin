@@ -2,29 +2,25 @@ import React, { useState } from "react";
 import styles from "../styles/users-table.module.css";
 import useUsers from "../hooks/useUsers";
 import useRemoveUser from "../hooks/useRemoveUser";
-import ReloadIcon from "../icons/ReloadIcon";
 import GarbageIcon from "../icons/GarbageIcon";
 import useUpdateUser from "../hooks/useUpdateUser";
-import UserFIeldRow from "./UserFieldRow";
 import EditIcon from "../icons/EditIcon";
-import { setFirstName, setLastName, setSearchUsers, setSelectedUser, useUsersStore } from "../store/users";
+import { setSelectedUser, useUsersStore } from "../store/users";
 import useRoles from "../hooks/useRoles";
-import { useShallow } from "zustand/shallow";
-import CreateFormField from "./CreateFormField";
-import CalendarIcon from "../icons/CalendarIcon";
 import SearchIcon from "../icons/SearchIcon";
 import DataFilters from "./DataFilters";
 import { Link, useNavigate, useSearch } from "@tanstack/react-router";
-import { ActionIcon, Button, Container, Table } from "@mantine/core";
+import { ActionIcon, Button, Table } from "@mantine/core";
 
 export default function UsersTable() {
-  const [selectedUser] = useUsersStore(useShallow((state) => [state.selectedUser, state.searchUser]));
+  const selectedUser = useUsersStore((state) => state.selectedUser);
   const { data = [], isLoading, error } = useUsers();
   const { data: roles = [] } = useRoles();
   const { mutate: removeUser } = useRemoveUser();
   const { mutate: updateUser } = useUpdateUser();
   const { query = "" } = useSearch({ from: "/users-table" });
   const navigate = useNavigate();
+  console.log(selectedUser);
 
   return (
     <div className={styles["users-table-container"]}>
@@ -50,7 +46,7 @@ export default function UsersTable() {
         </Button>
       </div>
 
-      <Table style={{ width: 1800, height: 900, marginBottom: "30px" }}>
+      <Table style={{ width: 1800, marginBottom: "30px" }}>
         <Table.Thead>
           <Table.Tr>
             <Table.Th>First Name</Table.Th>

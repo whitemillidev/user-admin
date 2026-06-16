@@ -21,6 +21,7 @@ import useRoles from "../hooks/useRoles";
 import useUsers from "../hooks/useUsers";
 import useAddUser from "../hooks/useAddUser";
 import {
+  hasFormData,
   resetCreateUserForm,
   setAge,
   setEmail,
@@ -84,13 +85,17 @@ export default function CreateUsersForm() {
         }}
         className={styles["create-users-form"]}
       >
-        <button
+        <Button
+          variant="transparent"
+          color="#d0d0d0"
           type="button"
-          className={styles["create-users-form-close-btn"]}
+          style={{ position: "absolute", top: "10px", right: "10px" }}
+          leftSection={<CloseIcon />}
           onClick={() => {
-            const confirmed = window.confirm("Вы действительно хотите закрыть окно? Введенные вами данные будут утеряны.");
-
-            if (!confirmed) return;
+            if (hasFormData()) {
+              const confirmed = window.confirm("Вы действительно хотите закрыть окно? Введенные вами данные будут утеряны.");
+              if (!confirmed) return;
+            }
 
             resetCreateUserForm();
             setIsWatched(false);
@@ -99,9 +104,7 @@ export default function CreateUsersForm() {
               to: "/users-table",
             });
           }}
-        >
-          <CloseIcon />
-        </button>
+        />
         <h2 className={styles["create-users-form-title"]}>Create Users Form</h2>
 
         <div className={styles["create-users-form-input-fullname-container"]}>

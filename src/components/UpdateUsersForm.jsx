@@ -16,6 +16,7 @@ import IncognitoIcon from "../icons/IncognitoIcon";
 import { useShallow } from "zustand/shallow";
 import { useNavigate } from "@tanstack/react-router";
 import useRoles from "../hooks/useRoles";
+import { Button } from "@mantine/core";
 
 export default function UpdateUsersForm() {
   const { mutate: updateUser } = useUpdateUser();
@@ -30,8 +31,15 @@ export default function UpdateUsersForm() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          const formData = Object.fromEntries(new FormData(e.target));
+          const formData = {
+            ...Object.fromEntries(new FormData(e.target)),
+            fullName: `${firstName} ${lastName}`,
+          };
           e.target.reset();
+
+          navigate({
+            to: "/users-table",
+          });
 
           updateUser({
             id: selectedUser.id,
@@ -41,9 +49,12 @@ export default function UpdateUsersForm() {
         }}
         className={styles["update-users-form"]}
       >
-        <button
+        <Button
+          variant="transparent"
+          color="#d0d0d0"
           type="button"
-          className={styles["update-users-form-close-btn"]}
+          style={{ position: "absolute", top: "10px", right: "10px" }}
+          leftSection={<CloseIcon />}
           onClick={() => {
             setSelectedUser(null);
             setIsWatched(false);
@@ -54,13 +65,12 @@ export default function UpdateUsersForm() {
               to: "/users-table",
             });
           }}
-        >
-          <CloseIcon />
-        </button>
+        />
         <h2 className={styles["update-users-form-title"]}>Update Users Form</h2>
 
         <div className={styles["update-users-form-input-fullname-container"]}>
           <UpdateFormField
+            w={215}
             name="firstName"
             label="First Name"
             onChange={(e) => setFirstName(e.target.value)}
@@ -70,6 +80,7 @@ export default function UpdateUsersForm() {
             defaultValue={selectedUser?.firstName}
           />
           <UpdateFormField
+            w={215}
             name="lastName"
             label="Last Name"
             onChange={(e) => setLastName(e.target.value)}
@@ -79,8 +90,9 @@ export default function UpdateUsersForm() {
             defaultValue={selectedUser?.lastName}
           />
         </div>
-        <UpdateFormField name="age" label="Age" Icon={CalendarIcon} type="number" placeholder="20" defaultValue={selectedUser?.age} />
+        <UpdateFormField w={450} name="age" label="Age" Icon={CalendarIcon} type="number" placeholder="20" defaultValue={selectedUser?.age} />
         <UpdateFormSelect
+          w={450}
           name="gender"
           label="Gender"
           Icon={GenderIcon}
@@ -90,8 +102,8 @@ export default function UpdateUsersForm() {
           ]}
           defaultValue={selectedUser?.gender}
         />
-        <UpdateFormField name="email" label="Email" Icon={MailIcon} type="email" placeholder="qwerty@gmail.com" defaultValue={selectedUser?.email} />
         <UpdateFormSelect
+          w={450}
           name="roleId"
           label="Role"
           Icon={RightsIcon}
@@ -102,6 +114,17 @@ export default function UpdateUsersForm() {
           defaultValue={selectedUser?.roleId}
         />
         <UpdateFormField
+          w={450}
+          name="email"
+          label="Email"
+          Icon={MailIcon}
+          type="email"
+          placeholder="qwerty@gmail.com"
+          defaultValue={selectedUser?.email}
+        />
+
+        <UpdateFormField
+          w={450}
           name="username"
           label="Username"
           Icon={UserIcon}
@@ -110,6 +133,7 @@ export default function UpdateUsersForm() {
           defaultValue={selectedUser?.username}
         />
         <UpdateFormField
+          w={450}
           name="password"
           label="Password"
           Icon={PasswIcon}
@@ -120,9 +144,9 @@ export default function UpdateUsersForm() {
           defaultValue={selectedUser?.password}
         />
 
-        <button className={styles["update-users-form-button"]} type="submit">
+        <Button type="submit" variant="outline" color="rgb(216, 216, 216)" mt="md">
           Update user
-        </button>
+        </Button>
       </form>
     </div>
   );
