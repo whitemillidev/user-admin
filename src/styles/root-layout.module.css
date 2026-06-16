@@ -21,16 +21,16 @@
 }
 
 .menu-close-button {
-  position: absolute;
-  left: 10%;
+  position: fixed;
+  left: 8%;
   background: transparent;
   border: none;
   cursor: pointer;
 }
 
 .menu-title {
-  position: absolute;
-  left: 5%;
+  position: fixed;
+  left: 4%;
   color: rgb(195, 195, 195);
   margin-right: 1rem;
 }

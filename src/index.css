@@ -10,6 +10,10 @@
   z-index: 10;
 }
 
+#root {
+  background-color: #0b1119;
+}
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
