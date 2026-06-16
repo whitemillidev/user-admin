@@ -26,6 +26,7 @@ export const useUsersStore = create(
       storage: createJSONStorage(() => sessionStorage),
 
       partialize: (state) => ({
+        selectedUser: state.selectedUser,
         firstName: state.firstName,
         lastName: state.lastName,
         gender: state.gender,
@@ -39,8 +40,17 @@ export const useUsersStore = create(
   ),
 );
 
+export function hasFormData() {
+  const state = useUsersStore.getState();
+
+  return [state.firstName, state.lastName, state.gender, state.age, state.roleId, state.email, state.username, state.password].some(
+    (value) => value !== "",
+  );
+}
+
 export function resetCreateUserForm() {
   useUsersStore.setState({
+    selectedUser: null,
     firstName: "",
     lastName: "",
     gender: "",
