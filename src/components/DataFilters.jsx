@@ -1,11 +1,15 @@
 import React from "react";
-import styles from "../styles/user-filters.module.css";
+import { TextInput } from "@mantine/core";
 
-export default function DataFilters({ className, label, Icon, onChange, placeholder, ...props }) {
+export default function DataFilters({ leftSection, onChange, placeholder, value, ...props }) {
   return (
-    <div className={styles["search-container"]}>
-      {Icon && <Icon className={styles["search-icon"]} />}
-      <input className={styles["input-search"]} onChange={onChange} placeholder={placeholder} {...props} />
-    </div>
+    <TextInput
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+      leftSection={leftSection}
+      {...props}
+      style={{ width: "400px", marginBottom: "50px" }}
+    />
   );
 }

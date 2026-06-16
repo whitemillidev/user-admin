@@ -33,6 +33,7 @@ import {
   setUsername,
   useUsersStore,
 } from "../store/users";
+import { Button } from "@mantine/core";
 
 export default function CreateUsersForm() {
   const [selectedUser, isWatched, firstName, lastName, age, gender, roleId, email, username, password] = useUsersStore(
@@ -105,6 +106,7 @@ export default function CreateUsersForm() {
 
         <div className={styles["create-users-form-input-fullname-container"]}>
           <CreateFormField
+            w={215}
             name="firstName"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
@@ -114,6 +116,7 @@ export default function CreateUsersForm() {
             placeholder="Ivan"
           />
           <CreateFormField
+            w={215}
             name="lastName"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
@@ -125,6 +128,7 @@ export default function CreateUsersForm() {
         </div>
 
         <CreateFormField
+          w={450}
           name="age"
           value={age}
           onChange={(e) => setAge(e.target.value)}
@@ -134,9 +138,10 @@ export default function CreateUsersForm() {
           placeholder="20"
         />
         <CreateFormSelect
+          w={450}
           name="gender"
           value={gender}
-          onChange={(e) => setGender(e.target.value)}
+          onChange={(value) => setGender(value)}
           label="Gender"
           Icon={GenderIcon}
           options={[
@@ -145,9 +150,10 @@ export default function CreateUsersForm() {
           ]}
         />
         <CreateFormSelect
+          w={450}
           name="roleId"
           value={roleId}
-          onChange={(e) => setRoleId(e.target.value)}
+          onChange={(value) => setRoleId(value)}
           label="Role"
           Icon={RightsIcon}
           options={roles.map((role) => ({
@@ -156,6 +162,7 @@ export default function CreateUsersForm() {
           }))}
         />
         <CreateFormField
+          w={450}
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -165,6 +172,7 @@ export default function CreateUsersForm() {
           placeholder="qwerty@gmail.com"
         />
         <CreateFormField
+          w={450}
           name="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -174,6 +182,7 @@ export default function CreateUsersForm() {
           placeholder="nexus_4235"
         />
         <CreateFormField
+          w={450}
           name="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -185,6 +194,7 @@ export default function CreateUsersForm() {
           placeholder="••••••••"
         />
         <CreateFormField
+          w={450}
           name="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -196,9 +206,9 @@ export default function CreateUsersForm() {
           placeholder="••••••••"
         />
 
-        <button className={styles["create-users-form-button"]} type="submit">
+        <Button type="submit" variant="outline" color="rgb(216, 216, 216)" mt="md">
           Add user
-        </button>
+        </Button>
       </form>
     </div>
   );

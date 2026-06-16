@@ -1,29 +1,32 @@
 import styles from "../styles/root-layout.module.css";
 import { createRootRoute, Link, Outlet } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
-import BurgerMenuIcon from "../icons/BurgerMenuIcon";
-import useToggle from "../hooks/useToggle";
-import CloseIcon from "../icons/CloseIcon";
+import { Burger } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 
 export const Route = createRootRoute({
   component: RootLayout,
 });
 
 function RootLayout() {
-  const { value, toggle } = useToggle(false);
+  const [opened, { toggle }] = useDisclosure();
 
   return (
     <div>
       <div className={styles["menu-container"]}>
-        {value && <h4 className={styles["menu-title"]}>Menu</h4>}
-        <button className={value ? styles["menu-close-button"] : styles["menu-burger-button"]} onClick={toggle}>
-          {value ? <CloseIcon className={styles["close-icon"]} /> : <BurgerMenuIcon className={styles["burger-icon"]} />}
-        </button>
+        {opened && <h4 className={styles["menu-title"]}>Menu</h4>}
+        <Burger
+          opened={opened}
+          onClick={toggle}
+          color="rgb(216, 216, 216)"
+          aria-label="Toggle navigation"
+          className={opened && styles["menu-close-button"]}
+        />
       </div>
 
-      {value && <div className={styles["overlay"]} onClick={toggle} />}
+      {opened && <div className={styles["overlay"]} onClick={toggle} />}
 
-      <nav className={`${styles["nav"]} ${value ? styles["open"] : ""}`}>
+      <nav className={`${styles["nav"]} ${opened ? styles["open"] : ""}`}>
         <Link onClick={toggle} className={styles["nav-link"]} to="/users-table">
           Users Table
         </Link>

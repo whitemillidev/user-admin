@@ -1,23 +1,6 @@
 import React from "react";
-import styles from "../styles/create-user-form.module.css";
-import useRoles from "../hooks/useRoles";
+import { Select } from "@mantine/core";
 
-export default function CreateFormSelect({ className, name, options, label, Icon, defaultValue, ...props }) {
-  return (
-    <div className={styles["create-users-form-select-container"]}>
-      <p htmlFor={name} className={styles["create-users-form-select-label"]}>
-        {label}
-      </p>
-      <div className={styles["create-users-form-select-wrapper"]}>
-        {Icon && <Icon className={styles["user-create-icon-select"]} />}
-        <select id={name} name={name} className={styles["create-users-form-select-role"]} defaultValue={defaultValue} {...props}>
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-      </div>
-    </div>
-  );
+export default function CreateFormSelect({ name, options, label, Icon, value, onChange, ...props }) {
+  return <Select name={name} label={label} data={options} value={value} onChange={onChange} leftSection={Icon ? <Icon /> : null} {...props} />;
 }

@@ -15,6 +15,7 @@ import CalendarIcon from "../icons/CalendarIcon";
 import SearchIcon from "../icons/SearchIcon";
 import DataFilters from "./DataFilters";
 import { Link, useNavigate, useSearch } from "@tanstack/react-router";
+import { ActionIcon, Button, Container, Table } from "@mantine/core";
 
 export default function UsersTable() {
   const [selectedUser] = useUsersStore(useShallow((state) => [state.selectedUser, state.searchUser]));
@@ -40,66 +41,65 @@ export default function UsersTable() {
               replace: true,
             });
           }}
-          Icon={SearchIcon}
+          leftSection={<SearchIcon />}
           placeholder={"Enter the user's name..."}
         />
 
-        <Link to="/users-table/add-users">
-          <button className={styles["add-user-btn"]}>Add user</button>
-        </Link>
+        <Button component={Link} to="/users-table/add-users" variant="outline" color="#b2b2b2">
+          Add User
+        </Button>
       </div>
-      <table className={styles["users-table"]}>
-        <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Gender</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Password</th>
-            <th>Age</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
 
-        <tbody>
+      <Table style={{ width: 1800, height: 900, marginBottom: "30px" }}>
+        <Table.Thead>
+          <Table.Tr>
+            <Table.Th>First Name</Table.Th>
+            <Table.Th>Last Name</Table.Th>
+            <Table.Th>Gender</Table.Th>
+            <Table.Th>Username</Table.Th>
+            <Table.Th>Email</Table.Th>
+            <Table.Th>Role</Table.Th>
+            <Table.Th>Password</Table.Th>
+            <Table.Th>Age</Table.Th>
+            <Table.Th>Edit</Table.Th>
+            <Table.Th>Delete</Table.Th>
+          </Table.Tr>
+        </Table.Thead>
+
+        <Table.Tbody>
           {data.map((user) => {
             return (
-              <tr key={user.id} className={styles["users-table-row"]}>
-                <td>{user.firstName}</td>
-                <td>{user.lastName}</td>
-                <td>{user.gender}</td>
-                <td>{user.username}</td>
-                <td>{user.email}</td>
-                <td>{roles.find((role) => role.id === user.roleId)?.roleName}</td>
-                <td>{user.password}</td>
-                <td>{user.age}</td>
+              <Table.Tr key={user.id}>
+                <Table.Td>{user.firstName}</Table.Td>
+                <Table.Td>{user.lastName}</Table.Td>
+                <Table.Td>{user.gender}</Table.Td>
+                <Table.Td>{user.username}</Table.Td>
+                <Table.Td>{user.email}</Table.Td>
+                <Table.Td>{roles.find((role) => role.id === user.roleId)?.roleName}</Table.Td>
+                <Table.Td>{user.password}</Table.Td>
+                <Table.Td>{user.age}</Table.Td>
 
-                <td>
-                  <Link to="/users-table/update-users">
-                    <button
-                      className={styles["users-table-item-edit"]}
-                      onClick={() => {
-                        setSelectedUser(user);
-                      }}
-                    >
-                      <EditIcon />
-                    </button>
-                  </Link>
-                </td>
-
-                <td>
-                  <button className={styles["users-table-item-delete"]} onClick={() => removeUser(user.id)}>
+                <Table.Td>
+                  <ActionIcon
+                    component={Link}
+                    variant="transparent"
+                    color="#d0d0d0"
+                    to="/users-table/update-users"
+                    onClick={() => setSelectedUser(user)}
+                  >
+                    <EditIcon />
+                  </ActionIcon>
+                </Table.Td>
+                <Table.Td>
+                  <ActionIcon variant="transparent" color="#d0d0d0" onClick={() => removeUser(user.id)}>
                     <GarbageIcon />
-                  </button>
-                </td>
-              </tr>
+                  </ActionIcon>
+                </Table.Td>
+              </Table.Tr>
             );
           })}
-        </tbody>
-      </table>
+        </Table.Tbody>
+      </Table>
     </div>
   );
 }
