@@ -15,7 +15,7 @@
     {
       "firstName": "Michael",
       "lastName": "Smith",
-      "age": "33",
+      "age": "35",
       "gender": "male",
       "roleId": "JlkmalinIANF",
       "email": "michael.smith@x.dummyjson.com",
@@ -167,45 +167,22 @@
       "username": "stephcurry",
       "password": "1234",
       "id": "LW22TqSrbiw"
-    },
-    {
-      "firstName": "Ramil'",
-      "lastName": "Museibov",
-      "age": "29",
-      "gender": "male",
-      "roleId": "oEllqSvwzMM",
-      "email": "ramilmys@gmail.com",
-      "username": "RMuseibov-KI21",
-      "password": "123",
-      "fullName": "Ramil' Museibov",
-      "id": "ae5HFi1l9SA"
     }
   ],
   "roles": [
     {
       "roleName": "Admin",
-      "accesses": [
-        "create",
-        "read",
-        "update",
-        "delete"
-      ],
+      "accesses": ["create", "read", "update", "delete"],
       "id": "oEllqSvwzMM"
     },
     {
       "roleName": "Moderator",
-      "accesses": [
-        "create",
-        "read",
-        "update"
-      ],
+      "accesses": ["create", "read", "update"],
       "id": "JlkmalinIANF"
     },
     {
       "roleName": "User",
-      "accesses": [
-        "read"
-      ],
+      "accesses": ["read"],
       "id": "WXFxRAHCX8A"
     }
   ],
