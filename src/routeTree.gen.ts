@@ -13,9 +13,9 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UsersTableRouteImport } from './routes/users-table'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as UsersTableUpdateUsersRouteImport } from './routes/users-table.update-users'
 import { Route as UsersTableAddUsersRouteImport } from './routes/users-table.add-users'
 import { Route as RolesTableAddRolesRouteImport } from './routes/roles-table.add-roles'
+import { Route as UsersTableUpdateUsersUserIdRouteImport } from './routes/users-table.update-users.$userId'
 
 const RolesTableLazyRouteImport = createFileRoute('/roles-table')()
 
@@ -34,11 +34,6 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const UsersTableUpdateUsersRoute = UsersTableUpdateUsersRouteImport.update({
-  id: '/update-users',
-  path: '/update-users',
-  getParentRoute: () => UsersTableRoute,
-} as any)
 const UsersTableAddUsersRoute = UsersTableAddUsersRouteImport.update({
   id: '/add-users',
   path: '/add-users',
@@ -49,6 +44,12 @@ const RolesTableAddRolesRoute = RolesTableAddRolesRouteImport.update({
   path: '/add-roles',
   getParentRoute: () => RolesTableLazyRoute,
 } as any)
+const UsersTableUpdateUsersUserIdRoute =
+  UsersTableUpdateUsersUserIdRouteImport.update({
+    id: '/update-users/$userId',
+    path: '/update-users/$userId',
+    getParentRoute: () => UsersTableRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -56,7 +57,7 @@ export interface FileRoutesByFullPath {
   '/roles-table': typeof RolesTableLazyRouteWithChildren
   '/roles-table/add-roles': typeof RolesTableAddRolesRoute
   '/users-table/add-users': typeof UsersTableAddUsersRoute
-  '/users-table/update-users': typeof UsersTableUpdateUsersRoute
+  '/users-table/update-users/$userId': typeof UsersTableUpdateUsersUserIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -64,7 +65,7 @@ export interface FileRoutesByTo {
   '/roles-table': typeof RolesTableLazyRouteWithChildren
   '/roles-table/add-roles': typeof RolesTableAddRolesRoute
   '/users-table/add-users': typeof UsersTableAddUsersRoute
-  '/users-table/update-users': typeof UsersTableUpdateUsersRoute
+  '/users-table/update-users/$userId': typeof UsersTableUpdateUsersUserIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -73,7 +74,7 @@ export interface FileRoutesById {
   '/roles-table': typeof RolesTableLazyRouteWithChildren
   '/roles-table/add-roles': typeof RolesTableAddRolesRoute
   '/users-table/add-users': typeof UsersTableAddUsersRoute
-  '/users-table/update-users': typeof UsersTableUpdateUsersRoute
+  '/users-table/update-users/$userId': typeof UsersTableUpdateUsersUserIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -83,7 +84,7 @@ export interface FileRouteTypes {
     | '/roles-table'
     | '/roles-table/add-roles'
     | '/users-table/add-users'
-    | '/users-table/update-users'
+    | '/users-table/update-users/$userId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -91,7 +92,7 @@ export interface FileRouteTypes {
     | '/roles-table'
     | '/roles-table/add-roles'
     | '/users-table/add-users'
-    | '/users-table/update-users'
+    | '/users-table/update-users/$userId'
   id:
     | '__root__'
     | '/'
@@ -99,7 +100,7 @@ export interface FileRouteTypes {
     | '/roles-table'
     | '/roles-table/add-roles'
     | '/users-table/add-users'
-    | '/users-table/update-users'
+    | '/users-table/update-users/$userId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -131,13 +132,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/users-table/update-users': {
-      id: '/users-table/update-users'
-      path: '/update-users'
-      fullPath: '/users-table/update-users'
-      preLoaderRoute: typeof UsersTableUpdateUsersRouteImport
-      parentRoute: typeof UsersTableRoute
-    }
     '/users-table/add-users': {
       id: '/users-table/add-users'
       path: '/add-users'
@@ -152,17 +146,24 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RolesTableAddRolesRouteImport
       parentRoute: typeof RolesTableLazyRoute
     }
+    '/users-table/update-users/$userId': {
+      id: '/users-table/update-users/$userId'
+      path: '/update-users/$userId'
+      fullPath: '/users-table/update-users/$userId'
+      preLoaderRoute: typeof UsersTableUpdateUsersUserIdRouteImport
+      parentRoute: typeof UsersTableRoute
+    }
   }
 }
 
 interface UsersTableRouteChildren {
   UsersTableAddUsersRoute: typeof UsersTableAddUsersRoute
-  UsersTableUpdateUsersRoute: typeof UsersTableUpdateUsersRoute
+  UsersTableUpdateUsersUserIdRoute: typeof UsersTableUpdateUsersUserIdRoute
 }
 
 const UsersTableRouteChildren: UsersTableRouteChildren = {
   UsersTableAddUsersRoute: UsersTableAddUsersRoute,
-  UsersTableUpdateUsersRoute: UsersTableUpdateUsersRoute,
+  UsersTableUpdateUsersUserIdRoute: UsersTableUpdateUsersUserIdRoute,
 }
 
 const UsersTableRouteWithChildren = UsersTableRoute._addFileChildren(
