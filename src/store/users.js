@@ -43,7 +43,14 @@ export const useUsersStore = create(
 export function hasFormData() {
   const state = useUsersStore.getState();
 
-  return [state.firstName, state.lastName, state.gender, state.age, state.roleId, state.email, state.username, state.password].some(
+  return [state.firstName, 
+    state.lastName, 
+    state.gender, 
+    state.age, 
+    state.roleId, 
+    state.email, 
+    state.username, 
+    state.password].some(
     (value) => value !== "",
   );
 }
