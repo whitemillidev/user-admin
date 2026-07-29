@@ -20,7 +20,6 @@ export default function UsersTable() {
   const { mutate: updateUser } = useUpdateUser();
   const { query = "" } = useSearch({ from: "/users-table" });
   const navigate = useNavigate();
-  console.log(selectedUser);
 
   return (
     <div className={styles["users-table-container"]}>
@@ -80,8 +79,9 @@ export default function UsersTable() {
                     component={Link}
                     variant="transparent"
                     color="#d0d0d0"
-                    to="/users-table/update-users"
-                    onClick={() => setSelectedUser(user)}
+                    to="/users-table/update-users/$userId"
+                    // onClick={() => setSelectedUser(user)}
+                    params={{ userId: user.id }}
                   >
                     <EditIcon />
                   </ActionIcon>
