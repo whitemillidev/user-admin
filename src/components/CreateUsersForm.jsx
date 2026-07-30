@@ -208,7 +208,7 @@ export default function CreateUsersForm() {
           type={isWatched ? "text" : "password"}
           placeholder="••••••••"
         />
-        <CreateFormField
+        <CreateFormField 
           w={450}
           name="password"
           value={password}
