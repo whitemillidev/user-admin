@@ -22,7 +22,9 @@ import useUsers from "../hooks/useUsers";
 import useAddUser from "../hooks/useAddUser";
 import {
   hasFormData,
+  isFormValid,
   resetCreateUserForm,
+  setHasError,
   setAge,
   setEmail,
   setFirstName,
@@ -35,10 +37,12 @@ import {
   useUsersStore,
 } from "../store/users";
 import { Button } from "@mantine/core";
+import { notifications } from "@mantine/notifications";
 
 export default function CreateUsersForm() {
-  const [selectedUser, isWatched, firstName, lastName, age, gender, roleId, email, username, password] = useUsersStore(
+  const [hasError, selectedUser, isWatched, firstName, lastName, age, gender, roleId, email, username, password] = useUsersStore(
     useShallow((state) => [
+      state.hasError,
       state.selectedUser,
       state.isWatched,
       state.firstName,
@@ -61,6 +65,13 @@ export default function CreateUsersForm() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
+
+          if (!isFormValid()) {
+            setHasError(true);
+            return;
+          }
+
+          setHasError(false);
 
           const userData = {
             ...Object.fromEntries(new FormData(e.target)),
@@ -99,6 +110,7 @@ export default function CreateUsersForm() {
 
             resetCreateUserForm();
             setIsWatched(false);
+            setHasError(false);
 
             navigate({
               to: "/users-table",
@@ -208,7 +220,7 @@ export default function CreateUsersForm() {
           type={isWatched ? "text" : "password"}
           placeholder="••••••••"
         />
-
+        {hasError && <span style={{ color: "red" }}>Please fill in all required fields.</span>}
         <Button type="submit" variant="outline" color="rgb(216, 216, 216)" mt="md">
           Add user
         </Button>
