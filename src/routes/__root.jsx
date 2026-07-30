@@ -28,7 +28,7 @@ function RootLayout() {
             className={opened && styles["menu-close-button"]}
           />
         </Tooltip>
-      </div>
+      </div> 
       {opened && <div className={styles["overlay"]} onClick={toggle} />}
 
       <nav className={`${styles["nav"]} ${opened ? styles["open"] : ""}`}>
