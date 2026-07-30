@@ -1,7 +1,6 @@
 import { notifications } from "@mantine/notifications";
 import { XIcon, CheckIcon } from "@phosphor-icons/react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import GarbageIcon from "../icons/GarbageIcon";
 import { createElement } from "react";
 
 export default function useRemoveUser() {
@@ -23,7 +22,7 @@ export default function useRemoveUser() {
 
       notifications.show({
         title: "Success!",
-        message: "User has been deleted",
+        message: "User has been successfully deleted!",
         color: "green",
         icon: createElement(CheckIcon),
         styles: {
@@ -32,7 +31,7 @@ export default function useRemoveUser() {
             color: "#fff",
             border: "1px solid #374151",
           },
-          title: { 
+          title: {
             color: "#fff",
           },
           description: {
@@ -45,7 +44,7 @@ export default function useRemoveUser() {
     onError: () => {
       notifications.show({
         title: "Error!",
-        message: "Couldn't get a response from the database",
+        message: "Couldn't delete user. Couldn't get a response from the database!",
         color: "red",
         icon: createElement(XIcon),
         styles: {
