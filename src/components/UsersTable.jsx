@@ -88,7 +88,7 @@ export default function UsersTable() {
                       <EditIcon />
                     </ActionIcon>
                   </Tooltip>
-                </Table.Td>
+                </Table.Td> 
 
                 <Table.Td>
                   <Tooltip label="Delete User" position="right" offset={10} withArrow>
