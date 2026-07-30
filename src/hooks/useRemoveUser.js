@@ -32,7 +32,7 @@ export default function useRemoveUser() {
             color: "#fff",
             border: "1px solid #374151",
           },
-          title: {
+          title: { 
             color: "#fff",
           },
           description: {
