@@ -7,6 +7,7 @@ export const useUsersStore = create(
       selectedUser: null,
       roles: [],
       isWatched: false,
+      hasError: false,
 
       searchUsers: "",
       searchRoles: "",
@@ -40,19 +41,18 @@ export const useUsersStore = create(
   ),
 );
 
-export function hasFormData() {
+function getFormValues() {
   const state = useUsersStore.getState();
 
-  return [state.firstName, 
-    state.lastName, 
-    state.gender, 
-    state.age, 
-    state.roleId, 
-    state.email, 
-    state.username, 
-    state.password].some(
-    (value) => value !== "",
-  );
+  return [state.firstName, state.lastName, state.gender, state.age, state.roleId, state.email, state.username, state.password];
+}
+
+export function hasFormData() {
+  return getFormValues().some((value) => value.trim() !== "");
+}
+
+export function isFormValid() {
+  return getFormValues().every((value) => value.trim() !== "");
 }
 
 export function resetCreateUserForm() {
@@ -68,6 +68,10 @@ export function resetCreateUserForm() {
     password: "",
     isWatched: false,
   });
+}
+
+export function setHasError(hasError) {
+  useUsersStore.setState({ hasError });
 }
 
 export function setSelectedUser(selectedUser) {
