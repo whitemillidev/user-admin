@@ -1,16 +1,16 @@
 {
   "users": [
     {
-      "fullName": "Emily Johnson",
       "firstName": "Emily",
       "lastName": "Johnson",
-      "age": "29",
+      "age": "30",
       "gender": "female",
+      "roleId": "oEllqSvwzMM",
       "email": "emily.johnson@x.dummyjson.com",
       "username": "emilys",
       "password": "emilys123",
-      "id": "1",
-      "roleId": "oEllqSvwzMM"
+      "fullName": " ",
+      "id": "1"
     },
     {
       "firstName": "Michael",
@@ -37,15 +37,15 @@
       "id": "3"
     },
     {
-      "fullName": "James Wilson",
       "firstName": "James",
       "lastName": "Wilson",
       "age": "32",
       "gender": "male",
-      "email": "james.wilson@x.dummyjson.com",
       "roleId": "WXFxRAHCX8A",
+      "email": "james.wilson@x.dummyjson.com",
       "username": "jamesw",
       "password": "jameswpass",
+      "fullName": " ",
       "id": "4"
     },
     {
@@ -157,32 +157,43 @@
       "id": "NtFkuMfKKjU"
     },
     {
-      "fullName": "Stephen Curry",
       "firstName": "Stephen",
       "lastName": "Curry",
       "age": "37",
       "gender": "male",
-      "email": "stephcurry@gmail.com",
       "roleId": "WXFxRAHCX8A",
+      "email": "stephcurry@gmail.com",
       "username": "stephcurry",
       "password": "1234",
+      "fullName": " ",
       "id": "LW22TqSrbiw"
     }
   ],
   "roles": [
     {
       "roleName": "Admin",
-      "accesses": ["create", "read", "update", "delete"],
+      "accesses": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
       "id": "oEllqSvwzMM"
     },
     {
       "roleName": "Moderator",
-      "accesses": ["create", "read", "update"],
+      "accesses": [
+        "create",
+        "read",
+        "update"
+      ],
       "id": "JlkmalinIANF"
     },
     {
       "roleName": "User",
-      "accesses": ["read"],
+      "accesses": [
+        "read"
+      ],
       "id": "WXFxRAHCX8A"
     }
   ],
