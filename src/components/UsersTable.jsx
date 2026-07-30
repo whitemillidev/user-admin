@@ -10,7 +10,7 @@ import useRoles from "../hooks/useRoles";
 import SearchIcon from "../icons/SearchIcon";
 import DataFilters from "./DataFilters";
 import { Link, useNavigate, useSearch } from "@tanstack/react-router";
-import { ActionIcon, Button, Table } from "@mantine/core";
+import { ActionIcon, Button, Table, Tooltip } from "@mantine/core";
 
 export default function UsersTable() {
   const selectedUser = useUsersStore((state) => state.selectedUser);
@@ -27,18 +27,20 @@ export default function UsersTable() {
       {error && <div>Error: {error.message}</div>}
       <h1 className={styles["users-table-title"]}>Users table</h1>
       <div className={styles["users-table-controls"]}>
-        <DataFilters
-          value={query}
-          onChange={(e) => {
-            const value = e.target.value;
-            navigate({
-              search: value ? { query: value } : {},
-              replace: true,
-            });
-          }}
-          leftSection={<SearchIcon />}
-          placeholder={"Enter the user's name..."}
-        />
+        <Tooltip label="Search Users" position="bottom" withArrow>
+          <DataFilters
+            value={query}
+            onChange={(e) => {
+              const value = e.target.value;
+              navigate({
+                search: value ? { query: value } : {},
+                replace: true,
+              });
+            }}
+            leftSection={<SearchIcon />}
+            placeholder={"Enter the user's name..."}
+          />
+        </Tooltip>
 
         <Button component={Link} to="/users-table/add-users" variant="outline" color="#b2b2b2">
           Add User
@@ -75,21 +77,25 @@ export default function UsersTable() {
                 <Table.Td>{user.age}</Table.Td>
 
                 <Table.Td>
-                  <ActionIcon
-                    component={Link}
-                    variant="transparent"
-                    color="#d0d0d0"
-                    to="/users-table/update-users/$userId"
-                    // onClick={() => setSelectedUser(user)}
-                    params={{ userId: user.id }}
-                  >
-                    <EditIcon />
-                  </ActionIcon>
+                  <Tooltip label="Edit User" position="right" offset={10} withArrow>
+                    <ActionIcon
+                      component={Link}
+                      variant="transparent"
+                      color="#d0d0d0"
+                      to="/users-table/update-users/$userId"
+                      params={{ userId: user.id }}
+                    >
+                      <EditIcon />
+                    </ActionIcon>
+                  </Tooltip>
                 </Table.Td>
+
                 <Table.Td>
-                  <ActionIcon variant="transparent" color="#d0d0d0" onClick={() => removeUser(user.id)}>
-                    <GarbageIcon />
-                  </ActionIcon>
+                  <Tooltip label="Delete User" position="right" offset={10} withArrow>
+                    <ActionIcon variant="transparent" color="#d0d0d0" onClick={() => removeUser(user.id)}>
+                      <GarbageIcon />
+                    </ActionIcon>
+                  </Tooltip>
                 </Table.Td>
               </Table.Tr>
             );
