@@ -208,7 +208,7 @@ export default function CreateUsersForm() {
           type={isWatched ? "text" : "password"}
           placeholder="••••••••"
         />
-        <CreateFormField 
+        <CreateFormField
           w={450}
           name="password"
           value={password}
@@ -221,7 +221,7 @@ export default function CreateUsersForm() {
           placeholder="••••••••"
         />
         {hasError && <span style={{ color: "red" }}>Please fill in all required fields.</span>}
-        <Button type="submit" variant="outline" color="rgb(216, 216, 216)" mt="md">
+        <Button type="submit" variant="outline" className={styles["create-users-form-button"]} mt="md">
           Add user
         </Button>
       </form>

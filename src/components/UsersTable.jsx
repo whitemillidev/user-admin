@@ -42,7 +42,7 @@ export default function UsersTable() {
           />
         </Tooltip>
 
-        <Button component={Link} to="/users-table/add-users" variant="outline" color="#b2b2b2">
+        <Button component={Link} to="/users-table/add-users" variant="outline" className={styles["add-user-btn"]}>
           Add User
         </Button>
       </div>
@@ -79,20 +79,20 @@ export default function UsersTable() {
                 <Table.Td>
                   <Tooltip label="Edit User" position="right" offset={10} withArrow>
                     <ActionIcon
-                      component={Link}
                       variant="transparent"
-                      color="#d0d0d0"
+                      className={styles["users-table-item-edit"]}
+                      component={Link}
                       to="/users-table/update-users/$userId"
                       params={{ userId: user.id }}
                     >
                       <EditIcon />
                     </ActionIcon>
                   </Tooltip>
-                </Table.Td> 
+                </Table.Td>
 
                 <Table.Td>
                   <Tooltip label="Delete User" position="right" offset={10} withArrow>
-                    <ActionIcon variant="transparent" color="#d0d0d0" onClick={() => removeUser(user.id)}>
+                    <ActionIcon variant="transparent" className={styles["users-table-item-delete"]} onClick={() => removeUser(user.id)}>
                       <GarbageIcon />
                     </ActionIcon>
                   </Tooltip>

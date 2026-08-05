@@ -160,7 +160,7 @@ export default function UpdateUsersForm() {
           defaultValue={user?.password}
         />
 
-        <Button type="submit" variant="outline" color="rgb(216, 216, 216)" mt="md">
+        <Button type="submit" variant="transparent" className={styles["update-users-form-button"]} mt="md">
           Update user
         </Button>
       </form>
