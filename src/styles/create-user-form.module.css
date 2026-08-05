@@ -8,6 +8,12 @@
   transform: translate(-50%, -50%);
   background-color: rgba(20, 20, 30, 0.861);
   z-index: 20;
+  border-radius: 10px;
+}
+
+[data-mantine-color-scheme="light"] .create-users-form-container {
+  /* Переопределяем ТОЛЬКО цвет фона для светлой темы */
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .create-users-form-title {
@@ -165,7 +171,6 @@
   border: solid 1px rgb(63, 63, 63);
   border-radius: 5px;
   background-color: rgb(16, 16, 28);
-
   cursor: pointer;
 
   &:hover {
@@ -235,4 +240,334 @@
 
 .create-users-form-accesses-text {
   font-size: 14px;
+}
+
+/* ========================================== */
+/* ТЕМНАЯ ТЕМА (ПО УМОЛЧАНИЮ)                 */
+/* ========================================== */
+
+.create-users-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(20, 20, 30, 0.861);
+  z-index: 20;
+
+  /* Фикс острых углов: добавляем контейнеру скругление и прячем вылезающий фон */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.create-users-form-title {
+  font-size: 40px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.create-users-form-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.create-users-form-input-label {
+  color: rgb(203, 202, 202);
+}
+
+.create-users-form-input-wrapper {
+  position: relative;
+}
+
+.create-users-form-select-wrapper {
+  position: relative;
+}
+
+.user-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: rgb(203, 202, 202);
+}
+
+.user-icon-right-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(203, 202, 202);
+}
+
+.user-icon-right {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(203, 202, 202);
+}
+
+.user-icon-right:hover {
+  color: rgb(255, 255, 255);
+}
+
+.create-users-form {
+  width: 700px;
+  padding: 20px;
+  border: solid 1px rgb(63, 63, 63);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.create-users-form-input-fullname-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.create-users-form-input-firstname,
+.create-users-form-input-lastname {
+  width: 200px;
+  font-size: 16px;
+  padding: 10px 10px 10px 35px;
+  border: solid 1px rgb(63, 63, 63);
+  border-radius: 5px;
+  background-color: rgb(20, 20, 30);
+  color: rgb(255, 255, 255);
+}
+
+.create-users-form-select-label {
+  color: rgb(203, 202, 202);
+}
+
+.user-create-icon-select {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: rgb(203, 202, 202);
+}
+
+.create-users-form-select-role {
+  appearance: none;
+  width: 510px;
+  font-size: 16px;
+  padding: 10px 10px 10px 35px;
+  border: solid 1px rgb(63, 63, 63);
+  border-radius: 5px;
+  background-color: rgb(20, 20, 30);
+  color: rgb(255, 255, 255);
+}
+
+.create-users-form-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: rgb(203, 202, 202);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.create-users-form-close-btn:hover {
+  color: rgb(255, 255, 255);
+}
+
+.create-users-form-select-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.create-users-form-input-fullname {
+  width: 465px;
+  font-size: 16px;
+  padding: 10px 10px 10px 35px;
+  border: solid 1px rgb(63, 63, 63);
+  border-radius: 5px;
+  background-color: rgb(20, 20, 30);
+  color: rgb(255, 255, 255);
+  pointer-events: none;
+}
+
+.create-users-form-input-age,
+.create-users-form-input-gender,
+.create-users-form-input-username,
+.create-users-form-input-email,
+.create-users-form-input-role,
+.create-users-form-input-password,
+.create-users-form-input-rolename {
+  width: 465px;
+  font-size: 16px;
+  padding: 10px 10px 10px 35px;
+  border: solid 1px rgb(63, 63, 63);
+  border-radius: 5px;
+  background-color: rgb(20, 20, 30);
+  color: rgb(255, 255, 255);
+}
+
+.create-users-form-button {
+  padding: 0.5rem 1rem;
+  border: solid 1px rgb(63, 63, 63);
+  border-radius: 10px;
+  background-color: rgb(16, 16, 28);
+  color: rgb(255, 255, 255) !important;
+  cursor: pointer;
+}
+
+.create-users-form-button:hover {
+  background-color: rgb(24, 25, 40);
+}
+
+/* ACCESSES */
+.create-users-form-accesses-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.create-users-form-accesses-label {
+  color: rgb(203, 202, 202);
+}
+
+.create-users-form-accesses-wrapper {
+  position: relative;
+}
+
+.create-users-form-accesses-item-icon {
+  width: 18px;
+  height: 18px;
+  color: rgb(203, 202, 202);
+}
+
+.user-create-icon-accesses {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: rgb(203, 202, 202);
+}
+
+.create-users-form-accesses-list {
+  width: 510px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.create-users-form-accesses-item {
+  flex: 1 1 calc(40% - 0.5rem);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10px;
+  border: 1px solid rgb(63, 63, 63);
+  border-radius: 5px;
+  background-color: rgb(20, 20, 30);
+  cursor: pointer;
+  color: rgb(203, 202, 202);
+  transition: 0.2s;
+}
+
+.create-users-form-accesses-item:hover {
+  background-color: rgb(30, 30, 45);
+}
+
+.create-users-form-accesses-checkbox {
+  cursor: pointer;
+}
+
+.create-users-form-accesses-text {
+  font-size: 14px;
+}
+
+/* ========================================== */
+/* СВЕТЛАЯ ТЕМА (ПЕРЕОПРЕДЕЛЕНИЕ СТИЛЕЙ)     */
+/* ========================================== */
+
+/* Главный контейнер и обводка внутренней формы */
+[data-mantine-color-scheme="light"] .create-users-form-container {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+[data-mantine-color-scheme="light"] .create-users-form {
+  border-color: rgb(210, 214, 219);
+}
+
+/* Заголовок */
+[data-mantine-color-scheme="light"] .create-users-form-title {
+  color: rgb(20, 20, 30);
+}
+
+/* Текстовые лейблы над полями */
+[data-mantine-color-scheme="light"] .create-users-form-input-label,
+[data-mantine-color-scheme="light"] .create-users-form-select-label,
+[data-mantine-color-scheme="light"] .create-users-form-accesses-label {
+  color: rgb(75, 85, 99); /* Читаемый темно-серый цвет */
+}
+
+/* Все иконки внутри полей и кнопка закрытия */
+[data-mantine-color-scheme="light"] .user-icon,
+[data-mantine-color-scheme="light"] .user-icon-right,
+[data-mantine-color-scheme="light"] .user-icon-right-btn,
+[data-mantine-color-scheme="light"] .user-create-icon-select,
+[data-mantine-color-scheme="light"] .user-create-icon-accesses,
+[data-mantine-color-scheme="light"] .create-users-form-accesses-item-icon,
+[data-mantine-color-scheme="light"] .create-users-form-close-btn {
+  color: rgb(107, 114, 128);
+}
+
+/* Эффекты наведения для иконок и кнопки закрытия */
+[data-mantine-color-scheme="light"] .create-users-form-close-btn:hover,
+[data-mantine-color-scheme="light"] .user-icon-right:hover {
+  color: rgb(17, 24, 39);
+}
+
+/* Все поля ввода (инпуты и селекты) */
+[data-mantine-color-scheme="light"] .create-users-form-input-firstname,
+[data-mantine-color-scheme="light"] .create-users-form-input-lastname,
+[data-mantine-color-scheme="light"] .create-users-form-select-role,
+[data-mantine-color-scheme="light"] .create-users-form-input-fullname,
+[data-mantine-color-scheme="light"] .create-users-form-input-age,
+[data-mantine-color-scheme="light"] .create-users-form-input-gender,
+[data-mantine-color-scheme="light"] .create-users-form-input-username,
+[data-mantine-color-scheme="light"] .create-users-form-input-email,
+[data-mantine-color-scheme="light"] .create-users-form-input-role,
+[data-mantine-color-scheme="light"] .create-users-form-input-password,
+[data-mantine-color-scheme="light"] .create-users-form-input-rolename {
+  background-color: rgb(249, 250, 251); /* Светлый фон инпутов */
+  border-color: rgb(209, 213, 219); /* Светлая рамка */
+  color: rgb(17, 24, 39); /* Темный текст внутри полей */
+}
+
+/* Кнопка отправки формы */
+[data-mantine-color-scheme="light"] .create-users-form-button {
+  background-color: rgb(243, 244, 246);
+  border-color: rgb(50, 47, 47);
+  color: rgb(17, 24, 39) !important;
+}
+
+[data-mantine-color-scheme="light"] .create-users-form-button:hover {
+  background-color: rgb(229, 231, 235) !important;
+}
+
+/* Элементы списка доступов (Accesses Items) */
+[data-mantine-color-scheme="light"] .create-users-form-accesses-item {
+  background-color: rgb(249, 250, 251);
+  border-color: rgb(209, 213, 219);
+  color: rgb(55, 65, 81);
+}
+
+[data-mantine-color-scheme="light"] .create-users-form-accesses-item:hover {
+  background-color: rgb(237, 242, 247);
 }

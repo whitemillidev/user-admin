@@ -8,6 +8,7 @@
   transform: translate(-50%, -50%);
   background-color: rgba(20, 20, 30, 0.861);
   z-index: 20;
+  border-radius: 10px;
 }
 
 .update-users-form-title {
@@ -170,13 +171,74 @@
 
 .update-users-form-button {
   padding: 0.5rem 1rem;
-  border: solid 1px rgb(63, 63, 63);
+  border: solid 1px rgb(63, 63, 63) !important;
   border-radius: 5px;
   background-color: rgb(16, 16, 28);
 
   cursor: pointer;
 
   &:hover {
-    background-color: rgb(24, 25, 40);
+    background-color: rgb(24, 25, 40) !important;
   }
+}
+
+[data-mantine-color-scheme="light"] .update-users-form-container {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+[data-mantine-color-scheme="light"] .update-users-form {
+  border-color: rgb(210, 214, 219);
+}
+
+/* Заголовок */
+[data-mantine-color-scheme="light"] .update-users-form-title {
+  color: rgb(20, 20, 30);
+}
+
+/* Текстовые лейблы над полями */
+[data-mantine-color-scheme="light"] .update-users-form-input-label,
+[data-mantine-color-scheme="light"] .update-users-form-select-label {
+  color: rgb(75, 85, 99);
+}
+
+/* Все иконки внутри полей и кнопка закрытия */
+[data-mantine-color-scheme="light"] .user-icon,
+[data-mantine-color-scheme="light"] .user-icon-right,
+[data-mantine-color-scheme="light"] .user-icon-right-btn,
+[data-mantine-color-scheme="light"] .user-update-icon-select,
+[data-mantine-color-scheme="light"] .update-users-form-close-btn {
+  color: rgb(107, 114, 128);
+}
+
+/* Эффекты наведения для иконок и кнопки закрытия */
+[data-mantine-color-scheme="light"] .update-users-form-close-btn:hover,
+[data-mantine-color-scheme="light"] .user-icon-right:hover {
+  color: rgb(17, 24, 39);
+}
+
+/* Все поля ввода (инпуты и селекты) */
+[data-mantine-color-scheme="light"] .update-users-form-input-firstname,
+[data-mantine-color-scheme="light"] .update-users-form-input-lastname,
+[data-mantine-color-scheme="light"] .update-users-form-select-role,
+[data-mantine-color-scheme="light"] .update-users-form-input-fullname,
+[data-mantine-color-scheme="light"] .update-users-form-input-age,
+[data-mantine-color-scheme="light"] .update-users-form-input-gender,
+[data-mantine-color-scheme="light"] .update-users-form-input-username,
+[data-mantine-color-scheme="light"] .update-users-form-input-email,
+[data-mantine-color-scheme="light"] .update-users-form-input-role,
+[data-mantine-color-scheme="light"] .update-users-form-input-password {
+  background-color: rgb(249, 250, 251);
+  border-color: rgb(209, 213, 219);
+  color: rgb(17, 24, 39);
+}
+
+/* Кнопка отправки формы */
+[data-mantine-color-scheme="light"] .update-users-form-button {
+  background-color: rgb(243, 244, 246);
+  border-color: rgb(209, 213, 219);
+  color: rgb(17, 24, 39) !important;
+}
+
+[data-mantine-color-scheme="light"] .update-users-form-button:hover {
+  background-color: rgb(229, 231, 235) !important;
 }
