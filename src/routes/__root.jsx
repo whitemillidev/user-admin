@@ -1,8 +1,10 @@
 import styles from "../styles/root-layout.module.css";
 import { createRootRoute, Link, Outlet } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
-import { Burger, Tooltip } from "@mantine/core";
+import { Burger, Button, Tooltip, ActionIcon, useMantineColorScheme } from "@mantine/core";
 import { useDisclosure, useHover } from "@mantine/hooks";
+import SunIcon from "../icons/SunIcon";
+import MoonIcon from "../icons/MoonIcon";
 
 export const Route = createRootRoute({
   component: RootLayout,
@@ -10,6 +12,9 @@ export const Route = createRootRoute({
 
 function RootLayout() {
   const [opened, { toggle }] = useDisclosure();
+
+  const { colorScheme, setColorScheme } = useMantineColorScheme();
+  const isLight = colorScheme === "light";
 
   const { hovered, ref } = useHover();
   const isTooltipVisible = !opened && hovered;
@@ -28,7 +33,27 @@ function RootLayout() {
             className={opened && styles["menu-close-button"]}
           />
         </Tooltip>
-      </div> 
+
+        <Tooltip label="Switching themes" closeDelay={200} position="left" withArrow>
+          <ActionIcon
+            className={styles["switching-themes-btn"]}
+            onClick={() => setColorScheme(isLight ? "dark" : "light")}
+            variant="default"
+            size="lg"
+            radius="md"
+            style={{
+              border: "none",
+              background: "transparent",
+              position: "absolute",
+              top: "15px",
+              right: "15px",
+            }}
+          >
+            {isLight ? <MoonIcon /> : <SunIcon />}
+          </ActionIcon>
+        </Tooltip>
+      </div>
+
       {opened && <div className={styles["overlay"]} onClick={toggle} />}
 
       <nav className={`${styles["nav"]} ${opened ? styles["open"] : ""}`}>
