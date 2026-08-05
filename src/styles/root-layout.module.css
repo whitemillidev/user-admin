@@ -3,6 +3,7 @@
 /* ========================================== */
 
 .menu-container {
+  width: 250px;
   display: flex;
   position: fixed;
   top: 0;
@@ -12,6 +13,7 @@
   align-items: center;
   padding-left: 10px;
   z-index: 30;
+  border: none;
 }
 
 .menu-burger-button {
@@ -39,13 +41,14 @@
   position: fixed;
   top: 50px;
   left: 0;
-  width: 260px;
+  width: 250px;
   height: 100vh;
   background: #090d13;
   padding: 20px;
   z-index: 20;
   transform: translateX(-100%);
   transition: transform 0.2s ease;
+  border-top: 1px solid rgb(94, 95, 96);
 }
 
 .nav-link {
@@ -74,6 +77,10 @@
 /* СВЕТЛАЯ ТЕМА (ПЕРЕОПРЕДЕЛЕНИЕ СТИЛЕЙ)     */
 /* ========================================== */
 
+[data-mantine-color-scheme="light"] .menu-container {
+  background-color: #ffffff;
+}
+
 /* Заголовок меню "Menu" */
 [data-mantine-color-scheme="light"] .menu-title {
   color: rgb(17, 24, 39); /* Темный текст */
@@ -83,6 +90,7 @@
 [data-mantine-color-scheme="light"] .nav {
   background: #ffffff; /* Светлый фон панели */
   border-right: 1px solid rgb(229, 231, 235); /* Небольшая светлая граница, чтобы не сливалось с контентом */
+  border-top: 1px solid rgb(229, 231, 235); /* аккуратная линия снизу */
 }
 
 /* Ссылки в меню */
