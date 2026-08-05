@@ -25,19 +25,6 @@ export default function useAddUser() {
         message: "User was successfully created!",
         color: "green",
         icon: createElement(CheckIcon),
-        styles: {
-          root: {
-            backgroundColor: "#1f2937",
-            color: "#fff",
-            border: "1px solid #374151",
-          },
-          title: {
-            color: "#fff",
-          },
-          description: {
-            color: "#d1d5db",
-          },
-        },
       });
     },
 
@@ -47,19 +34,6 @@ export default function useAddUser() {
         message: "Failed to create a user. Couldn't get a response from the database!",
         color: "red",
         icon: createElement(XIcon),
-        styles: {
-          root: {
-            backgroundColor: "#1f2937",
-            color: "#fff",
-            border: "1px solid #374151",
-          },
-          title: {
-            color: "#fff",
-          },
-          description: {
-            color: "#d1d5db",
-          },
-        },
       });
     },
   });
