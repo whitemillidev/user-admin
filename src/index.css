@@ -4,17 +4,25 @@
   left: 0;
   width: 100%;
   height: 100%;
-
   background: rgba(0, 0, 0, 0.6); /* затемнение */
-
   z-index: 10;
 }
 
+/* Применяем фон ко всей странице */
+body,
 #root {
-  background-color: #0b1119;
+  background-color: var(--bg);
+  color: var(--text);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease; /* Плавный переход при смене темы */
 }
 
-:root {
+/* ======================================================== */
+/* СВЕТЛАЯ ТЕМА (Будет активна, когда Mantine переключит на light) */
+/* ======================================================== */
+:root,
+[data-mantine-color-scheme="light"] {
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -25,6 +33,11 @@
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
   --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  /* Переменные для ИНПУТОВ и СЕЛЕКТОВ Mantine (Светлые цвета) */
+  --input-bg: rgb(249, 250, 251);
+  --input-text: rgb(17, 24, 39);
+  --input-border: rgb(209, 213, 219);
 
   --sans: system-ui, "Segoe UI", Roboto, sans-serif;
   --heading: system-ui, "Segoe UI", Roboto, sans-serif;
@@ -39,31 +52,54 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
 
-  @media (max-width: 1024px) {
+[data-mantine-color-scheme="light"] .mantine-Tooltip-tooltip {
+  background-color: var(--input-bg) !important;
+  color: var(--input-text) !important;
+  border: 1px solid var(--input-border) !important;
+}
+
+@media (max-width: 1024px) {
+  :root,
+  [data-mantine-color-scheme="light"] {
     font-size: 16px;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #0b1119;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+/* ======================================================== */
+/* ТЕМНАЯ ТЕМА (Заменяет медиа-запрос на селектор Mantine)  */
+/* ======================================================== */
+[data-mantine-color-scheme="dark"] {
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --bg: #0b1119;
+  --border: #2e303a;
+  --code-bg: #1f2028;
+  --accent: #c084fc;
+  --accent-bg: rgba(192, 132, 252, 0.15);
+  --accent-border: rgba(192, 132, 252, 0.5);
+  --social-bg: rgba(47, 48, 58, 0.5);
+  --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+  /* Переменные для ИНПУТОВ и СЕЛЕКТОВ Mantine (Твои кастомные темные цвета) */
+  --input-bg: rgb(20, 20, 30);
+  --input-text: rgb(203, 202, 202);
+  --input-border: rgb(63, 63, 63);
 }
 
+[data-mantine-color-scheme="dark"] #social .button-icon {
+  filter: invert(1) brightness(2);
+}
+
+/* Фикс для Tooltip, чтобы в темной теме он не становился белым */
+[data-mantine-color-scheme="dark"] .mantine-Tooltip-tooltip {
+  background-color: var(--input-bg) !important;
+  color: var(--input-text) !important;
+  border: 1px solid var(--input-border) !important;
+}
+
+/* Базовые стили разметки */
 body {
   margin: 0;
 }
@@ -79,20 +115,28 @@ h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
   margin: 32px 0;
-  @media (max-width: 1024px) {
+}
+
+@media (max-width: 1024px) {
+  h1 {
     font-size: 36px;
     margin: 20px 0;
   }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
   letter-spacing: -0.24px;
   margin: 0 0 8px;
-  @media (max-width: 1024px) {
+}
+
+@media (max-width: 1024px) {
+  h2 {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
 }
@@ -110,4 +154,48 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+
+/* ======================================================== */
+/* ЖЕЛЕЗОБЕТОННЫЙ ФИКС ДЛЯ ТЕМНОЙ ТЕМЫ                      */
+/* ======================================================== */
+
+/* --- Стили для TextInput в темной теме --- */
+[data-mantine-color-scheme="dark"] .mantine-TextInput-input {
+  background-color: rgb(20, 20, 30) ;
+  color: rgb(203, 202, 202) ;
+  border: 1px solid rgb(63, 63, 63) ;
+}
+
+[data-mantine-color-scheme="dark"] .mantine-TextInput-label {
+  color: rgb(203, 202, 202) ;
+}
+
+
+/* --- Стили для Select в темной теме --- */
+[data-mantine-color-scheme="dark"] .mantine-Select-input {
+  background-color: rgb(20, 20, 30) ;
+  color: rgb(203, 202, 202) ;
+  border: 1px solid rgb(63, 63, 63) ;
+}
+
+[data-mantine-color-scheme="dark"] .mantine-Select-label {
+  color: rgb(203, 202, 202) ;
+}
+
+/* Выпадающий список (дропдаун) селекта */
+[data-mantine-color-scheme="dark"] .mantine-Select-dropdown {
+  background-color: rgb(20, 20, 30) ;
+  border: 1px solid rgb(63, 63, 63) ;
+}
+
+/* Элементы внутри выпадающего списка */
+[data-mantine-color-scheme="dark"] .mantine-Select-option {
+  color: rgb(203, 202, 202) ;
+}
+
+/* Ховер для элементов списка в темной теме */
+[data-mantine-color-scheme="dark"] .mantine-Select-option:hover {
+  background-color: rgba(255, 255, 255, 0.05) ;
 }
