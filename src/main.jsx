@@ -15,11 +15,11 @@ const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <MantineProvider withGlobalStyles withNormalizeCSS theme={theme}>
+    <MantineProvider theme={theme} defaultColorScheme="dark">
       <Notifications position="bottom-right" />
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
       </QueryClientProvider>
     </MantineProvider>
-  </StrictMode>, 
+  </StrictMode>,
 );
