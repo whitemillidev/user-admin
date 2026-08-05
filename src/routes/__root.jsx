@@ -33,26 +33,26 @@ function RootLayout() {
             className={opened && styles["menu-close-button"]}
           />
         </Tooltip>
-
-        <Tooltip label="Switching themes" closeDelay={200} position="left" withArrow>
-          <ActionIcon
-            className={styles["switching-themes-btn"]}
-            onClick={() => setColorScheme(isLight ? "dark" : "light")}
-            variant="default"
-            size="lg"
-            radius="md"
-            style={{
-              border: "none",
-              background: "transparent",
-              position: "absolute",
-              top: "15px",
-              right: "15px",
-            }}
-          >
-            {isLight ? <MoonIcon /> : <SunIcon />}
-          </ActionIcon>
-        </Tooltip>
       </div>
+
+      <Tooltip label="Switching themes" position="left" withArrow>
+        <ActionIcon
+          onClick={() => setColorScheme(isLight ? "dark" : "light")}
+          variant="default"
+          size="lg"
+          radius="md"
+          style={{
+            border: "none",
+            background: "transparent",
+            position: "absolute",
+            top: "15px",
+            right: "15px",
+            zIndex: "30",
+          }}
+        >
+          {isLight ? <MoonIcon /> : <SunIcon />}
+        </ActionIcon>
+      </Tooltip>
 
       {opened && <div className={styles["overlay"]} onClick={toggle} />}
 
