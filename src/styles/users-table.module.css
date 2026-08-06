@@ -87,17 +87,15 @@ td {
 }
 
 [data-mantine-color-scheme="light"] th {
-  color: rgb(17, 24, 39); /* Темный текст заголовков */
+  color: rgb(17, 24, 39);
 }
 
-/* Ячейки таблицы и светлые границы строк */
 [data-mantine-color-scheme="light"] td {
   border-top-color: rgb(229, 231, 235);
   border-bottom-color: rgb(229, 231, 235);
-  color: rgb(55, 65, 81); /* Читаемый темно-серый цвет текста */
+  color: rgb(55, 65, 81);
 }
 
-/* Кнопка изменения (карандаш / иконка) */
 [data-mantine-color-scheme="light"] .users-table-item-edit {
   color: rgb(107, 114, 128);
 }
@@ -106,16 +104,14 @@ td {
   color: rgb(17, 24, 39);
 }
 
-/* Кнопка удаления */
 [data-mantine-color-scheme="light"] .users-table-item-delete {
   color: rgb(107, 114, 128);
 }
 
 [data-mantine-color-scheme="light"] .users-table-item-delete:hover {
-  color: rgb(220, 38, 38); /* Насыщенный красный при ховере */
+  color: rgb(220, 38, 38);
 }
 
-/* Кнопка «Добавить пользователя» */
 [data-mantine-color-scheme="light"] .add-user-btn {
   border-color: rgb(209, 213, 219);
   color: rgb(75, 85, 99);

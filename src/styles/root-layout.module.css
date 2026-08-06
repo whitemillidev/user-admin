@@ -1,7 +1,3 @@
-/* ========================================== */
-/* ТЕМНАЯ ТЕМА (ПО УМОЛЧАНИЮ)                 */
-/* ========================================== */
-
 .menu-container {
   width: 250px;
   display: flex;
@@ -14,7 +10,7 @@
   padding-left: 10px;
   z-index: 30;
   border: none;
-  background: transparent; /* Убрали жесткий фоновый цвет */
+  background: transparent;
 }
 
 .menu-burger-button {
@@ -40,19 +36,17 @@
 
 .nav {
   position: fixed;
-  top: 0; /* Подняли до самого верха, чтобы фон меню закрывал и область кнопки */
+  top: 0;
   left: 0;
   width: 250px;
   height: 100vh;
   background: #090d13;
-  padding: 70px 20px 20px 20px; /* Увеличили верхний padding (50px высота контейнера + 20px отступ) */
+  padding: 70px 20px 20px 20px;
   z-index: 20;
   transform: translateX(-100%);
   transition: transform 0.2s ease;
-  /* Границы убраны, чтобы они не торчали, пока меню закрыто */
 }
 
-/* Стили для ссылок остаются прежними */
 .nav-link {
   display: block;
   padding: 0.5rem 0;
@@ -73,15 +67,9 @@
 
 .open {
   transform: translateX(0);
-  /* Границу темной темы показываем только в открытом состоянии */
   border-bottom: 1px solid rgb(94, 95, 96);
 }
 
-/* ========================================== */
-/* СВЕТЛАЯ ТЕМА (ПЕРЕОПРЕДЕЛЕНИЕ СТИЛЕЙ)     */
-/* ========================================== */
-
-/* Контейнер в светлой теме тоже всегда прозрачный */
 [data-mantine-color-scheme="light"] .menu-container {
   background: transparent;
 }
@@ -90,12 +78,10 @@
   color: rgb(17, 24, 39);
 }
 
-/* Фон навигации */
 [data-mantine-color-scheme="light"] .nav {
   background: #ffffff;
 }
 
-/* Границу для светлой темы включаем только при открытии */
 [data-mantine-color-scheme="light"] .nav.open {
   border-right: 1px solid rgb(229, 231, 235);
 }

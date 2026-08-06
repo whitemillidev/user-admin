@@ -491,11 +491,6 @@
   font-size: 14px;
 }
 
-/* ========================================== */
-/* СВЕТЛАЯ ТЕМА (ПЕРЕОПРЕДЕЛЕНИЕ СТИЛЕЙ)     */
-/* ========================================== */
-
-/* Главный контейнер и обводка внутренней формы */
 [data-mantine-color-scheme="light"] .create-users-form-container {
   background-color: rgba(255, 255, 255, 0.95);
 }
@@ -504,19 +499,16 @@
   border-color: rgb(210, 214, 219);
 }
 
-/* Заголовок */
 [data-mantine-color-scheme="light"] .create-users-form-title {
   color: rgb(20, 20, 30);
 }
 
-/* Текстовые лейблы над полями */
 [data-mantine-color-scheme="light"] .create-users-form-input-label,
 [data-mantine-color-scheme="light"] .create-users-form-select-label,
 [data-mantine-color-scheme="light"] .create-users-form-accesses-label {
-  color: rgb(75, 85, 99); /* Читаемый темно-серый цвет */
+  color: rgb(75, 85, 99);
 }
 
-/* Все иконки внутри полей и кнопка закрытия */
 [data-mantine-color-scheme="light"] .user-icon,
 [data-mantine-color-scheme="light"] .user-icon-right,
 [data-mantine-color-scheme="light"] .user-icon-right-btn,
@@ -527,13 +519,11 @@
   color: rgb(107, 114, 128);
 }
 
-/* Эффекты наведения для иконок и кнопки закрытия */
 [data-mantine-color-scheme="light"] .create-users-form-close-btn:hover,
 [data-mantine-color-scheme="light"] .user-icon-right:hover {
   color: rgb(17, 24, 39);
 }
 
-/* Все поля ввода (инпуты и селекты) */
 [data-mantine-color-scheme="light"] .create-users-form-input-firstname,
 [data-mantine-color-scheme="light"] .create-users-form-input-lastname,
 [data-mantine-color-scheme="light"] .create-users-form-select-role,
@@ -545,12 +535,11 @@
 [data-mantine-color-scheme="light"] .create-users-form-input-role,
 [data-mantine-color-scheme="light"] .create-users-form-input-password,
 [data-mantine-color-scheme="light"] .create-users-form-input-rolename {
-  background-color: rgb(249, 250, 251); /* Светлый фон инпутов */
-  border-color: rgb(209, 213, 219); /* Светлая рамка */
-  color: rgb(17, 24, 39); /* Темный текст внутри полей */
+  background-color: rgb(249, 250, 251);
+  border-color: rgb(209, 213, 219);
+  color: rgb(17, 24, 39);
 }
 
-/* Кнопка отправки формы */
 [data-mantine-color-scheme="light"] .create-users-form-button {
   background-color: rgb(243, 244, 246);
   border-color: rgb(50, 47, 47);
@@ -561,7 +550,6 @@
   background-color: rgb(229, 231, 235) !important;
 }
 
-/* Элементы списка доступов (Accesses Items) */
 [data-mantine-color-scheme="light"] .create-users-form-accesses-item {
   background-color: rgb(249, 250, 251);
   border-color: rgb(209, 213, 219);

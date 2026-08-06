@@ -190,18 +190,15 @@
   border-color: rgb(210, 214, 219);
 }
 
-/* Заголовок */
 [data-mantine-color-scheme="light"] .update-users-form-title {
   color: rgb(20, 20, 30);
 }
 
-/* Текстовые лейблы над полями */
 [data-mantine-color-scheme="light"] .update-users-form-input-label,
 [data-mantine-color-scheme="light"] .update-users-form-select-label {
   color: rgb(75, 85, 99);
 }
 
-/* Все иконки внутри полей и кнопка закрытия */
 [data-mantine-color-scheme="light"] .user-icon,
 [data-mantine-color-scheme="light"] .user-icon-right,
 [data-mantine-color-scheme="light"] .user-icon-right-btn,
@@ -210,13 +207,11 @@
   color: rgb(107, 114, 128);
 }
 
-/* Эффекты наведения для иконок и кнопки закрытия */
 [data-mantine-color-scheme="light"] .update-users-form-close-btn:hover,
 [data-mantine-color-scheme="light"] .user-icon-right:hover {
   color: rgb(17, 24, 39);
 }
 
-/* Все поля ввода (инпуты и селекты) */
 [data-mantine-color-scheme="light"] .update-users-form-input-firstname,
 [data-mantine-color-scheme="light"] .update-users-form-input-lastname,
 [data-mantine-color-scheme="light"] .update-users-form-select-role,
@@ -232,7 +227,6 @@
   color: rgb(17, 24, 39);
 }
 
-/* Кнопка отправки формы */
 [data-mantine-color-scheme="light"] .update-users-form-button {
   background-color: rgb(243, 244, 246);
   border-color: rgb(209, 213, 219);
